@@ -22,6 +22,12 @@ class Welcome extends CI_Controller {
 		$this->load->view('welcome_message', $data);
 	}
 
+	function grafik()
+	{
+		$data['konten'] = 'grafik';
+		$this->load->view('welcome_message', $data);
+	}
+
 	function simpan()
 	{
 		$save = array(
