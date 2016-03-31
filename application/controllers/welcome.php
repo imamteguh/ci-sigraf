@@ -24,6 +24,7 @@ class Welcome extends CI_Controller {
 
 	function grafik()
 	{
+		$this->load->helper('api_db');
 		$data['konten'] = 'grafik';
 		$this->load->view('welcome_message', $data);
 	}

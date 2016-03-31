@@ -24,6 +24,12 @@
 */
 $config['base_url'] = 'http://localhost/ci-sigraf/';
 
+// config tambahan
+$config['kode_prov'] = '32';
+$config['kode_kota'] = '17';
+$config['kode_kec'] = '6';
+$config['kode_kel'] = '2004';
+
 /*
 |--------------------------------------------------------------------------
 | Index File
