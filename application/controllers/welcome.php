@@ -15,10 +15,15 @@ class Welcome extends CI_Controller {
 		$this->load->view('welcome_message', $data);
 	}
 
-	function grafik()
+	function grafik_jumduk()
 	{
 		$this->load->helper('api_db');
 		$data['konten'] = 'grafik';
+		$this->load->view('welcome_message', $data);
+	}
+	function grafik_kk()
+	{
+		$data['konten'] = 'grafik_kk';
 		$this->load->view('welcome_message', $data);
 	}
 

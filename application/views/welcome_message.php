@@ -90,9 +90,17 @@
 
 						<ul class="submenu">
 							<li class="">
-								<a href="<?php echo site_url('welcome/grafik') ?>">
+								<a href="<?php echo site_url('welcome/grafik_jumduk') ?>">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Jumlah Penduduk
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="<?php echo site_url('welcome/grafik_kk') ?>">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Kepeilikan KK
 								</a>
 
 								<b class="arrow"></b>

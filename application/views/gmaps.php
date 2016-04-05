@@ -35,7 +35,8 @@
 	            strokeOpacity: 0.8,
 	            strokeWeight: 2,
 	            fillColor: warna,
-	            fillOpacity: 0.5
+	            fillOpacity: 0.5,
+	            label: i
 	        });
 
 	        bermudaTriangle.setMap(maphy);
