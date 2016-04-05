@@ -1,64 +1,37 @@
-<div class="row">
-
-	<div class="col-sm-12">
-		<div class="widget-box">
-			<div class="widget-header widget-header-flat widget-header-small">
-				<h5 class="widget-title">
-					<i class="ace-icon fa fa-signal"></i>
-					Grafik
-				</h5>
-			</div>
-
-			<div class="widget-body">
-				<div class="widget-main">
-					<div id="grafik" style="height:300px;min-width:100px;"></div>
-				</div><!-- /.widget-main -->
-			</div><!-- /.widget-body -->
-		</div><!-- /.widget-box -->
-	</div><!-- /.col -->
-
-</div>
-
-<script src="https://code.highcharts.com/highcharts.js"></script>
+<div id="grafikrw" style="height:400px;min-width:100px;"></div>
 <script>
-var chart = new Highcharts.Chart({
-	chart: {
+var chartrw = new Highcharts.Chart({
+    chart: {
             type: 'column',
-            renderTo: 'grafik'
+            renderTo: 'grafikrw'
         },
         title: {
-            text: 'Monthly Average Rainfall'
+            text: 'Jumlah Penduduk Per RW'
         },
         subtitle: {
-            text: 'Source: WorldClimate.com'
+            text: 'Desa Tani Mulya'
         },
         xAxis: {
             categories: [
-                'Jan',
-                'Feb',
-                'Mar',
-                'Apr',
-                'May',
-                'Jun',
-                'Jul',
-                'Aug',
-                'Sep',
-                'Oct',
-                'Nov',
-                'Dec'
+            <?php
+            foreach ($datax as $vl) {
+                # code...
+                echo '"RW '.$vl['NO_RW'].'",';
+            }
+            ?>
             ],
             crosshair: true
         },
         yAxis: {
             min: 0,
             title: {
-                text: 'Rainfall (mm)'
+                text: 'Jumlah (Orang)'
             }
         },
         tooltip: {
             headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
             pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                '<td style="padding:0"><b>{point.y:f}</b></td></tr>',
             footerFormat: '</table>',
             shared: true,
             useHTML: true
@@ -70,20 +43,26 @@ var chart = new Highcharts.Chart({
             }
         },
         series: [{
-            name: 'Tokyo',
-            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+            name: 'Laki - Laki',
+            data: [
+            <?php
+            foreach ($datax as $lk) {
+                # code...
+                echo $lk['LAKI_LAKI'].",";
+            }
+            ?>
+            ]
 
         }, {
-            name: 'New York',
-            data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
-
-        }, {
-            name: 'London',
-            data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
-
-        }, {
-            name: 'Berlin',
-            data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
+            name: 'Perempuan',
+            data: [
+            <?php
+            foreach ($datax as $pr) {
+                # code...
+                echo $pr['PEREMPUAN'].",";
+            }
+            ?>
+            ]
 
         }]
 });

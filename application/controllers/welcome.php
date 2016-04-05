@@ -5,20 +5,13 @@ class Welcome extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->database();
+		$this->load->model('supermodel');
 	}
 
 	function index()
 	{
-		$data['point'] = $this->db->get_where('t_layer', array('tipe'=>'marker'));
-		$data['shape'] = $this->db->get_where('t_layer', array('tipe'=>'polygon'));
+		$data['point'] = $this->supermodel->queryManual("SELECT * FROM map_point a, map_kategori b WHERE a.id_kategori=b.id_kategori");
 		$data['konten'] = 'gmaps';
-		$this->load->view('welcome_message', $data);
-	}
-
-	function dashboard()
-	{
-		$data['konten'] = 'backend_map';
 		$this->load->view('welcome_message', $data);
 	}
 
@@ -27,17 +20,6 @@ class Welcome extends CI_Controller {
 		$this->load->helper('api_db');
 		$data['konten'] = 'grafik';
 		$this->load->view('welcome_message', $data);
-	}
-
-	function simpan()
-	{
-		$save = array(
-			'kordinat' => $this->input->post('kordinat'),
-			'tipe' => $this->input->post('tipe')
-			);
-
-		$this->db->insert('t_layer', $save);
-		redirect('welcome/dashboard');
 	}
 
 	// xml polygon

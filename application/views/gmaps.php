@@ -12,41 +12,9 @@
 
 		infowindow = new google.maps.InfoWindow();
 
-    	var marker, i;
-    	var image = '<?php echo base_url("assets/img/icon.png") ?>';
+		addMarker();
 
-
-    	<?php
-		foreach ($point->result_array() as $rows) {
-		?>
-			marker = new google.maps.Marker({
-				position: new google.maps.LatLng<?php echo $rows['kordinat'] ?>,
-				map: maphy,
-				icon: image
-			});
-			var html = "<?php echo site_url('welcome/get_chart') ?>";
-			bindInfoWindow(marker, maphy, infowindow, html);
-			// google.maps.event.addListener(marker, 'click', (function(marker, i) {
-				
-			// 	return function() {
-			// 		infowindow.close();
-			// 		$.ajax({
-			// 			url: "<?php echo site_url('welcome/get_chart') ?>",
-			// 			data: "",
-			// 			success: function(data) {
-			// 				infowindow.setContent(data);
-			// 			}
-			// 		});
-			// 		infowindow.open(maphy, marker);
-			// 	}
-			// })(marker, i));
-
-
-		<?php
-	    }
-	    ?>
-
-	    downloadUrl("<?php echo site_url('welcome/api_area') ?>", function(data) {
+	    downloadUrl("<?php echo site_url('api_sistem/bg_layer') ?>", function(data) {
 	    var xml = data.responseXML;
 	    var markers = xml.documentElement.getElementsByTagName("marker");
 	    var bounds = new google.maps.LatLngBounds();
@@ -58,26 +26,75 @@
 	        for (var j = 0; j < decodedPolygon.length; j++) {
 	          bounds.extend(decodedPolygon[j]);
 	        }
+
+	        var html = "<?php echo site_url('welcome/get_chart') ?>" + i;
 	        // Construct the polygon.
 	        var bermudaTriangle = new google.maps.Polygon({
 	            paths: decodedPolygon,
 	            strokeColor: warna,
 	            strokeOpacity: 0.8,
-	            strokeWeight: 1,
+	            strokeWeight: 2,
 	            fillColor: warna,
-	            fillOpacity: 0.35
+	            fillOpacity: 0.5
 	        });
 
 	        bermudaTriangle.setMap(maphy);
 
+	        showFrame(bermudaTriangle, html);
+
+	        hoverMaps(bermudaTriangle)
+
+	        
 	      }
 	    });
 	}
 
+	function addMarker()
+	{
+		var marker, i;
+
+    	<?php
+    	foreach($point->result() as $p) {
+    	?>
+    	var image = '<?php echo base_url("assets/img/".$p->icon) ?>';
+    	var html = '<p style="text-align:center"><?php echo $p->nama ?><br>Alamat : <?php echo $p->alamat ?></p>';
+		marker = new google.maps.Marker({
+			position: new google.maps.LatLng<?php echo $p->koordinat ?>,
+			map: maphy,
+			icon: image
+		});
+		bindInfoWindow(marker, maphy, infowindow, html);
+		<?php
+		}
+		?>
+	}
+
+	function hoverMaps(bermudaTriangle)
+	{
+		google.maps.event.addListener(bermudaTriangle,"mouseover",function(){
+			this.setOptions({fillOpacity: 0.35});
+		}); 
+        google.maps.event.addListener(bermudaTriangle,"mouseout",function(){
+			this.setOptions({fillOpacity: 0.5});
+		});
+	}
+
+	function showFrame(bermudaTriangle, html) {
+		google.maps.event.addListener(bermudaTriangle, 'click', function(event) {
+			infowindow.setPosition(event.latLng);
+			infowindow.setContent(html);
+			infowindow.open(maphy, bermudaTriangle);
+			maphy.setZoom(17);
+			maphy.setCenter(event.latLng);
+		});
+	}
+
 	function bindInfoWindow(marker, map, infoWindow, html) {
       google.maps.event.addListener(marker, 'click', function() {
-        infoWindow.setContent('<iframe src="'+html+'" width="550" height="250"></iframe>');
+        infoWindow.setContent(html);
         infoWindow.open(map, marker);
+        map.setZoom(17);
+        map.setCenter(marker.getPosition());
       });
     }
 
@@ -98,5 +115,18 @@
     }
 
     function doNothing() {}
+
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhtCv07NbDL506YaOuet1tszZbXjwuBgo&callback=initMap&libraries=geometry" async defer></script>
+<script>
+	function checkpoint() {
+		var boxes = document.getElementById('commercial');
+		if(boxes[0].checked) {
+	        //Do stuff
+	        alert("bisa");
+	    }
+	    if(boxes[1].checked) { alert("bisa bisa"); }
+	    if(boxes[2].checked) { alert("bisa kali"); }
+	    alert("asu");
+	}
+</script>
