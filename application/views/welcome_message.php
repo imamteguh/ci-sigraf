@@ -5,6 +5,8 @@
 		<meta charset="utf-8" />
 		<title>Profil Desa Tanimulya</title>
 
+		<link rel="icon" href="<?php echo base_url('assets/img/index.png') ?>">
+
 		<meta name="description" content="overview &amp; stats" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
@@ -20,21 +22,8 @@
 		<!-- ace styles -->
 		<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
 
-		<!--[if lte IE 9]>
-			<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
-		<![endif]-->
-
-		<!--[if lte IE 9]>
-		  <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/ace-ie.min.css" />
-		<![endif]-->
-
-		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
-
-		<!--[if lte IE 8]>
-		<script src="<?php echo base_url() ?>assets/js/html5shiv.min.js"></script>
-		<script src="<?php echo base_url() ?>assets/js/respond.min.js"></script>
-		<![endif]-->
-
+		<script src="<?php echo base_url() ?>assets/js/jquery.2.1.1.min.js"></script>
+		<script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
 		
 	</head>
 
@@ -151,7 +140,7 @@
 				<div class="footer-inner">
 					<div class="footer-content">
 						<span class="bigger-120">
-							<span class="blue bolder">Sistem Grafik Kependudukan</span> &copy; 2016
+							<span class="blue bolder">Desa Tanimulya</span> &copy; 2016
 						</span>
 					</div>
 				</div>
@@ -163,19 +152,6 @@
 		</div><!-- /.main-container -->
 
 		<!-- basic scripts -->
-
-		<!--[if !IE]> -->
-		<script src="<?php echo base_url() ?>assets/js/jquery.2.1.1.min.js"></script>
-
-		<!-- <![endif]-->
-
-		<script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
-
-		<!-- page specific plugin scripts -->
-
-		<!--[if lte IE 8]>
-		  <script src="<?php echo base_url() ?>assets/js/excanvas.min.js"></script>
-		<![endif]-->
 		<script src="<?php echo base_url() ?>assets/js/jquery-ui.custom.min.js"></script>
 		<script src="<?php echo base_url() ?>assets/js/jquery.ui.touch-punch.min.js"></script>
 

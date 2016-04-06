@@ -74,6 +74,30 @@ class Dashboard extends CI_Controller
 		$this->load->view('admin/template', $data);
 	}
 
+	function hapus()
+	{
+		$table = $this->uri->segment(3);
+		$id = $this->uri->segment(4);
+
+		if (!empty($table) && !empty($id)) {
+			# code...
+			$hapus = $this->supermodel->deleteData($table, 'id', $id);
+			if ($hapus) {
+				# code...
+				$pesan = "Sukses.. data terhapus";
+				$this->session->flashdata('msg','<div class="alert alert-success>'.$pesan.'</div>');
+			} else {
+				$pesan = "Error.. data tidak terhapus";
+				$this->session->flashdata('msg','<div class="alert alert-danger>'.$pesan.'</div>');
+			}
+		} else {
+			$pesan = "Error... query gagal dijalankan";
+			$this->session->flashdata('msg','<div class="alert alert-danger>'.$pesan.'</div>');
+		}
+
+		echo "<script>window.history.back();</script>";
+	}
+
 	function logout()
 	{
 		$this->session->sess_destroy();

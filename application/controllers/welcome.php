@@ -10,7 +10,16 @@ class Welcome extends CI_Controller {
 
 	function index()
 	{
-		$data['point'] = $this->supermodel->queryManual("SELECT * FROM map_point a, map_kategori b WHERE a.id_kategori=b.id_kategori");
+		$data['kantor'] = $this->supermodel->queryManual("SELECT * FROM map_point a, map_kategori b WHERE a.id_kategori=b.id_kategori AND a.id_kategori=1");
+		$data['sd'] = $this->supermodel->queryManual("SELECT * FROM map_point a, map_kategori b WHERE a.id_kategori=b.id_kategori AND a.id_kategori=2");
+		$data['smp'] = $this->supermodel->queryManual("SELECT * FROM map_point a, map_kategori b WHERE a.id_kategori=b.id_kategori AND a.id_kategori=3");
+		$data['sma'] = $this->supermodel->queryManual("SELECT * FROM map_point a, map_kategori b WHERE a.id_kategori=b.id_kategori AND a.id_kategori=4");
+		$data['univ'] = $this->supermodel->queryManual("SELECT * FROM map_point a, map_kategori b WHERE a.id_kategori=b.id_kategori AND a.id_kategori=5");
+		$data['wisata'] = $this->supermodel->queryManual("SELECT * FROM map_point a, map_kategori b WHERE a.id_kategori=b.id_kategori AND a.id_kategori=6");
+		$data['pasar'] = $this->supermodel->queryManual("SELECT * FROM map_point a, map_kategori b WHERE a.id_kategori=b.id_kategori AND a.id_kategori=7");
+		$data['bs'] = $this->supermodel->queryManual("SELECT * FROM map_point a, map_kategori b WHERE a.id_kategori=b.id_kategori AND a.id_kategori=8");
+
+		$data['kat'] = $this->supermodel->queryManual("SELECT * FROM map_kategori");
 		$data['konten'] = 'gmaps';
 		$this->load->view('welcome_message', $data);
 	}

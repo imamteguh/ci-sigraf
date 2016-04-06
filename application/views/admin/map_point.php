@@ -2,8 +2,9 @@
 
 <div class="col-md-12">
 	
+	<?php echo $this->session->flashdata('msg') ?>
 
-	<h3>Data Point</h3>
+	<h3>Data Point <small><a href="<?php echo site_url('dashboard/editor_peta') ?>" class="btn btn-xs btn-primary">+ Tambah</a></small></h3>
 	
 	<table id="examtable" class="table table-bordered table-hover">
 		<thead>
@@ -29,7 +30,7 @@
 			<td><?php echo $rows->nm_kategori ?></td>
 			<td><?php echo $rows->koordinat ?></td>
 			<td>
-				<a href="#" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Hapus Point</a>
+				<a href="<?php echo site_url('dashboard/hapus/map_point/'.$rows->id) ?>" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Hapus Point</a>
 			</td>
 		</tr>
 		<?php

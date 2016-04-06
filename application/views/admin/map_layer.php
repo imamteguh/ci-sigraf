@@ -1,9 +1,11 @@
 <div class="row">
 
 <div class="col-md-12">
+
+	<?php echo $this->session->flashdata('msg') ?>
 	
 
-	<h3>Data Layer</h3>
+	<h3>Data Layer <small><a href="<?php echo site_url('dashboard/editor_peta') ?>" class="btn btn-xs btn-primary">+ Tambah</a></small></h3>
 	
 	<table id="examtable" class="table table-bordered table-hover">
 		<thead>
@@ -29,7 +31,7 @@
 			<td><span class="badge" style="background:<?php echo $rows->warna ?>"><?php echo $rows->warna ?></span></td>
 			<td><?php echo $status[$rows->status] ?></td>
 			<td>
-				<a href="#" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Hapus Layer</a>
+				<a href="<?php echo site_url('dashboard/hapus/map_layer/'.$rows->id) ?>" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Hapus Layer</a>
 			</td>
 		</tr>
 		<?php

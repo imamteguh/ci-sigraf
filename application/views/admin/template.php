@@ -5,6 +5,8 @@
 		<meta charset="utf-8" />
 		<title>Profil Desa Tanimulya</title>
 
+		<link rel="icon" href="<?php echo base_url('assets/img/index.png') ?>">
+
 		<meta name="description" content="overview &amp; stats" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
@@ -230,6 +232,16 @@
 		<script src="<?php echo base_url() ?>assets/js/ace-elements.min.js"></script>
 		<script src="<?php echo base_url() ?>assets/js/ace.min.js"></script>
 
-	
+		<!-- page specific plugin scripts -->
+		<script src="<?php echo base_url() ?>assets/js/jquery.dataTables.min.js"></script>
+		<script src="<?php echo base_url() ?>assets/js/jquery.dataTables.bootstrap.min.js"></script>
+		<script src="<?php echo base_url() ?>assets/js/dataTables.tableTools.min.js"></script>
+		<script src="<?php echo base_url() ?>assets/js/dataTables.colVis.min.js"></script>
+
+		<script>
+		jQuery(function($) {
+				$('#examtable').dataTable();
+		})
+		</script>
 	</body>
 </html>
