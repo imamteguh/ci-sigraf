@@ -28,6 +28,7 @@ class api_sistem extends CI_Controller
 			echo '<marker ';
 			echo 'coords="'.$rows->koordinat.'" ';
 			echo 'warna="'.$rows->warna.'" ';
+			echo 'link="'.$rows->link.'" ';
 			echo '/>';
 		}
 		echo '</markers>';

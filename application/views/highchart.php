@@ -1,23 +1,67 @@
 <script src="http://code.highcharts.com/highcharts.js"></script>
-
-<div id="container" style="height: 200px; width:500px;"></div>
-
+<div id="grafikrt" style="height:250px;min-width:100px;"></div>
 <script>
-var chart = new Highcharts.Chart({
-
+var chartrt = new Highcharts.Chart({
     chart: {
-        renderTo: 'container'
-    },
+            type: 'column',
+            renderTo: 'grafikrt'
+        },
+        title: {
+            text: 'Data Penduduk RW <?php echo $judul ?>'
+        },
+        xAxis: {
+            categories: [
+            <?php
+            foreach ($datax as $vl) {
+                # code...
+                echo '"RT '.$vl['NO_RT'].'",';
+            }
+            ?>
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Jumlah (Orang)'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:f}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Laki - Laki',
+            data: [
+            <?php
+            foreach ($datax as $lk) {
+                # code...
+                echo $lk['LAKI_LAKI'].",";
+            }
+            ?>
+            ]
 
-    xAxis: {
-        type: 'datetime'
-    },
+        }, {
+            name: 'Perempuan',
+            data: [
+            <?php
+            foreach ($datax as $pr) {
+                # code...
+                echo $pr['PEREMPUAN'].",";
+            }
+            ?>
+            ]
 
-    series: [{
-        data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
-        pointStart: Date.UTC(2012, 0, 1),
-        pointInterval: 24 * 3600 * 1000,
-    }]
-
+        }]
 });
 </script>

@@ -56,7 +56,15 @@ class Welcome extends CI_Controller {
 	// ajax get chart
 	function get_chart()
 	{
-		$this->load->view('highchart');
+		$rw = $_GET['id_rw'];
+		$link = "http://192.168.152.116:8082/disduk/webservice/jumduk/rt_var.php?id_rw=".$rw;
+		$konten = file_get_contents($link);
+		$json_decode = json_decode($konten, true);
+
+		$data['datax'] = $json_decode;
+		$data['judul'] = $rw;
+
+		$this->load->view('highchart', $data);
 	}
 }
 

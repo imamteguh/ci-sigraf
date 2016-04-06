@@ -2,10 +2,10 @@
 -- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 05, 2016 at 10:57 AM
--- Server version: 5.5.27
--- PHP Version: 5.4.7
+-- Inang: 127.0.0.1
+-- Waktu pembuatan: 06 Apr 2016 pada 13.40
+-- Versi Server: 5.5.27
+-- Versi PHP: 5.4.7
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `db_tanimulya`
+-- Basis data: `db_tanimulya`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `map_kategori`
+-- Struktur dari tabel `map_kategori`
 --
 
 CREATE TABLE IF NOT EXISTS `map_kategori` (
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `map_kategori` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
--- Dumping data for table `map_kategori`
+-- Dumping data untuk tabel `map_kategori`
 --
 
 INSERT INTO `map_kategori` (`id_kategori`, `nm_kategori`, `icon`) VALUES
@@ -50,7 +50,7 @@ INSERT INTO `map_kategori` (`id_kategori`, `nm_kategori`, `icon`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `map_layer`
+-- Struktur dari tabel `map_layer`
 --
 
 CREATE TABLE IF NOT EXISTS `map_layer` (
@@ -64,40 +64,40 @@ CREATE TABLE IF NOT EXISTS `map_layer` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=30 ;
 
 --
--- Dumping data for table `map_layer`
+-- Dumping data untuk tabel `map_layer`
 --
 
 INSERT INTO `map_layer` (`id`, `koordinat`, `judul`, `link`, `status`, `warna`) VALUES
-(2, 'vu{h@icfoSYYa@]iB_C^]aBmBc@e@oCvBoC~BgB`BOR{AR@j@|@dC|@hAJ^`BUXONAJXlA_@hCKLs@hAgALKbAk@b@U', 'RW 13', '#', 0, '#ffff66'),
-(3, 'f}{h@sogoSoBZs@jHFhC_@FgFkC{AjIxAZxDvA|HEdB@Be@b@_BGwBF}CaEeI', 'RW 05', '#', 0, '#000099'),
-(4, '~b|h@gwfoSqBAsHBaDkASK{A[Qh@cB`CSn@JZ~BjChCtCa@\\dBzB`Az@dDgC`@[l@s@l@aBnAoEj@aB', 'RW 12', '#', 0, '#cc00cc'),
-(5, 't}zh@sbfoSm@G[VWW@m@[WQeALu@c@}@HaAOeA_@YjCqAt@Fl@uDtEp@pBoOb@w@zDfB{AlIOj@cB`CWx@FThChCkDjCiDxCmAlA', 'RW 14', '#', 0, '#0066ff'),
-(6, 'ty{h@wngoSU@qA_AoAJaHaAyGkAUz@Hd@BnAh@FLVb@vApDxA~DlB`FfCd@AIqC', 'RW 04', '#', 0, '#004d00'),
-(7, 'jwzh@{ofoSa@Ce@_@Mc@_@S_@aAhAiBx@uElAmA\\oFJ_@`AO^}HPs@xB`@U|@JV@`Bh@DTZXlArDzAa@v@uBzOoE_Ao@vDw@K', 'RW 06', '#', 0, '#000066'),
-(8, 'rrzh@ytfoSuAyD]u@[_@[u@UeBe@y@iAs@X[RmA^qAHUKe@fADvAGd@?`@l@Ff@`BEtC\\Yp@S`FoApAs@tE', 'RW 24', '#', 0, '#ffff00'),
-(9, 'vf{h@msgoSdAkGh@oDp@cEZJd@JnBLRHXALQr@J|AXMxASbC`A^e@rBVP]|@Ab@Pj@z@Vt@f@`@ENRChAHLuBZSAsA_AoANsFy@', 'RW 03', '#', 0, '#1a1a00'),
-(10, 'tf{h@osgoS{FeASCC_@AgAj@uDQGAK\\gD_B_AE]Bk@Zw@f@y@NQhAaALN\\HnBXrEv@g@fCwAfJcAdG', 'RW 15', '#', 0, '#992600'),
-(11, 'd~zh@}ugoSoCk@qEk@y@OsB?Gy@PmC{AcEYs@CWX}@h@cAhA\\PTz@vBtCoAHET?xBt@z@\\HD|Az@]fD@JRFe@nCGd@@pA', 'RW 07', '#', 0, '#003333'),
-(13, 'zw{h@kehoSwCg@KNYDMIuBK}@[d@gC_J{AMOEMtAeBz@cAeAo@qA{@oAi@aBy@Eq@w@i@ESb@_A`@k@^?`AkA`AeAbBwCbB~@NFd@`@|@v@tAf@PDn@\\t@fA?j@Xn@bAtATpANd@?~CLXf@`@Lp@j@fAVf@BZOtA', 'RW 02', '#', 0, '#66ffff'),
-(15, 'pmzh@ushoSV_ALKRCXc@l@oARe@r@Zr@ZbFnCCHCTn@d@ApAd@b@`@^a@`@[b@OXw@e@oAa@Sg@m@QaCeAgAg@u@Wo@M', 'RW 19', '#', 0, '#003300'),
-(16, 'drzh@_{hoSSK?MNUPQ`@eAXo@t@kAhA{@BAJMj@cAPHv@b@j@ZXPcAnA_@?cAjBBRv@h@Dr@~Av@x@\\ZNv@f@xA~@y@bAq@z@c@h@BLo@f@eAcA?qAo@e@BUDKsAs@cB}@sCsA', 'RW 16', '#', 0, '#99004d'),
-(18, '|ezh@mihoSd@kAX_AW]lAsDDMxBb@NFd@H`A\\rAn@~Ar@v@TRf@fA^HBj@\\JDMRSj@Cj@D\\oAg@kBo@Y?uB~@g@Tu@mBU_@iA]_@p@MRYz@iBg@', 'RW 18', '#', 0, '#004d4d'),
-(19, 'xizh@ythoS\\}@R{@?[EUr@sBh@_BPc@d@yAf@aBp@oBn@Rn@T\\LnAd@d@Vi@`AMNw@l@UPo@bA]v@]x@EHQPMT?NTH]x@c@z@Yb@WBKJU~@', 'RW 22', '#', 0, '#cc00cc'),
-(20, 'z~zh@wdioSoC{Ag@WkE}AjAyDJTzEtBjDUfAz@mArBUb@w@x@', 'RW 17', '#', 0, '#992600'),
-(21, '|hzh@qegoSs@Q{@eCeAuBKyANw@Ok@qBuAG[T{@b@_Aj@WqEs@GiAJyBLmCC]lAa@dC@hB\\d@HzA`@DZt@lB~@`CQnCDz@xB@fC^jC\\dCf@Qv@MlBOvCCv@}@L?GwC]_BHGq@_@g@uBFwAEJ`@@L[`AOn@Oz@', 'RW 08', '#', 0, '#1a1a00'),
-(22, 'r{yh@s}goSeCe@cBa@mBe@yEcAzAuEp@Y\\mAZoBxCdA~Bf@l@Fl@X@R?fAB\\SlEG~@', 'RW 09', '#', 0, '#ffff66'),
-(23, '`|yh@gihoS?yAb@yA^sCLwA@wANMj@YlFdBjA`@_@bAeA`DV^W|@Yt@MX_AOc@KaCAK@cA^', 'RW 20', '#', 0, '#ff6600'),
-(24, 'r~yh@ayhoSFYp@w@BaABOSmEbAA\\PnARf@HJJhCv@hATuAbEDP@^U~@KTgFcBqAc@', 'RW 21', '#', 0, '#004d4d'),
-(25, 'hpyh@sphoS`@kCF_@DWZk@`@u@b@k@KS?W`@s@jA}@q@{CsA{AYGTy@`@Sr@sAbAC`@CVAPHPCJLn@pAj@tA^l@Lp@JvBFrACTE~@q@t@EX?vAQnBQzAMl@a@lAk@_@i@AeAQeAYkBu@', 'RW 10', '#', 0, '#99004d'),
-(26, 'tpzh@{fioSy@a@cCUc@McBo@GWaBe@m@{@gBkAg@OQTi@hBJHf@bAb@bAN`@`@n@Jn@fACVRrARd@HJNhAVz@ZlAR\\w@\\gA', 'RW 23', '#', 0, '#992600'),
-(27, 'tpzh@yfioSy@c@_CUkC}@GWaBg@k@w@eBkAk@Qt@mCp@Of@HjB|@bE|AJ`@zD`Cf@PIJ', 'RW 25', '#', 0, '#4d0099'),
-(28, 'vrzh@ikioSe@O{@k@aCwAKc@wAi@aC}@uAs@e@Gu@NyAmBaAWEo@AYOKqAc@Oq@g@Mq@W[DSAOKKQYc@QMYu@DkDo@qBtBEdBj@n@RPh@rCvAHAf@_Aj@Vv@\\jB|@`CJpDz@|Bl@v@~Af@~@FhAe@`CE^Dh@BNb@j@TVLZWz@Uv@', 'RW 01', '#', 0, '#66ffff'),
-(29, '|ryh@chioSSCk@Kq@GOC}@Ac@Za@dAIXe@PgA[a@CiAI_AGa@P}@y@o@m@o@e@TcA^_BViAj@aAPWFqBBu@@EFy@B]HgAD_@TwALw@Jo@j@cAXk@dAgBt@[F?x@DJ?h@AZCL^`@lAAbAChBXt@PNd@r@NJR@ZEp@Vf@LNp@jA`@F@LJFhAp@PNDRVj@t@Z^M`@YdAMd@QTQj@Wz@QBQIeADw@BU`@Wf@EHa@RQl@', 'RW 11', '#', 0, '#000066');
+(2, 'vu{h@icfoSYYa@]iB_C^]aBmBc@e@oCvBoC~BgB`BOR{AR@j@|@dC|@hAJ^`BUXONAJXlA_@hCKLs@hAgALKbAk@b@U', 'RW 13', '13', 0, '#808000'),
+(3, 'f}{h@sogoSoBZs@jHFhC_@FgFkC{AjIxAZxDvA|HEdB@Be@b@_BGwBF}CaEeI', 'RW 05', '5', 0, '#000099'),
+(4, '~b|h@gwfoSqBAsHBaDkASK{A[Qh@cB`CSn@JZ~BjChCtCa@\\dBzB`Az@dDgC`@[l@s@l@aBnAoEj@aB', 'RW 12', '12', 0, '#cc00cc'),
+(5, 't}zh@sbfoSm@G[VWW@m@[WQeALu@c@}@HaAOeA_@YjCqAt@Fl@uDtEp@pBoOb@w@zDfB{AlIOj@cB`CWx@FThChCkDjCiDxCmAlA', 'RW 14', '14', 0, '#0066ff'),
+(6, 'ty{h@wngoSU@qA_AoAJaHaAyGkAUz@Hd@BnAh@FLVb@vApDxA~DlB`FfCd@AIqC', 'RW 04', '4', 0, '#004d00'),
+(7, 'jwzh@{ofoSa@Ce@_@Mc@_@S_@aAhAiBx@uElAmA\\oFJ_@`AO^}HPs@xB`@U|@JV@`Bh@DTZXlArDzAa@v@uBzOoE_Ao@vDw@K', 'RW 06', '6', 0, '#000066'),
+(8, 'rrzh@ytfoSuAyD]u@[_@[u@UeBe@y@iAs@X[RmA^qAHUKe@fADvAGd@?`@l@Ff@`BEtC\\Yp@S`FoApAs@tE', 'RW 24', '24', 0, '#808000'),
+(9, 'vf{h@msgoSdAkGh@oDp@cEZJd@JnBLRHXALQr@J|AXMxASbC`A^e@rBVP]|@Ab@Pj@z@Vt@f@`@ENRChAHLuBZSAsA_AoANsFy@', 'RW 03', '3', 0, '#1a1a00'),
+(10, 'tf{h@osgoS{FeASCC_@AgAj@uDQGAK\\gD_B_AE]Bk@Zw@f@y@NQhAaALN\\HnBXrEv@g@fCwAfJcAdG', 'RW 15', '15', 0, '#992600'),
+(11, 'd~zh@}ugoSoCk@qEk@y@OsB?Gy@PmC{AcEYs@CWX}@h@cAhA\\PTz@vBtCoAHET?xBt@z@\\HD|Az@]fD@JRFe@nCGd@@pA', 'RW 07', '7', 0, '#003333'),
+(13, 'zw{h@kehoSwCg@KNYDMIuBK}@[d@gC_J{AMOEMtAeBz@cAeAo@qA{@oAi@aBy@Eq@w@i@ESb@_A`@k@^?`AkA`AeAbBwCbB~@NFd@`@|@v@tAf@PDn@\\t@fA?j@Xn@bAtATpANd@?~CLXf@`@Lp@j@fAVf@BZOtA', 'RW 02', '2', 0, '#000066'),
+(15, 'pmzh@ushoSV_ALKRCXc@l@oARe@r@Zr@ZbFnCCHCTn@d@ApAd@b@`@^a@`@[b@OXw@e@oAa@Sg@m@QaCeAgAg@u@Wo@M', 'RW 19', '19', 0, '#003300'),
+(16, 'drzh@_{hoSSK?MNUPQ`@eAXo@t@kAhA{@BAJMj@cAPHv@b@j@ZXPcAnA_@?cAjBBRv@h@Dr@~Av@x@\\ZNv@f@xA~@y@bAq@z@c@h@BLo@f@eAcA?qAo@e@BUDKsAs@cB}@sCsA', 'RW 16', '16', 0, '#99004d'),
+(18, '|ezh@mihoSd@kAX_AW]lAsDDMxBb@NFd@H`A\\rAn@~Ar@v@TRf@fA^HBj@\\JDMRSj@Cj@D\\oAg@kBo@Y?uB~@g@Tu@mBU_@iA]_@p@MRYz@iBg@', 'RW 18', '18', 0, '#660000'),
+(19, 'xizh@ythoS\\}@R{@?[EUr@sBh@_BPc@d@yAf@aBp@oBn@Rn@T\\LnAd@d@Vi@`AMNw@l@UPo@bA]v@]x@EHQPMT?NTH]x@c@z@Yb@WBKJU~@', 'RW 22', '22', 0, '#cc00cc'),
+(20, 'z~zh@wdioSoC{Ag@WkE}AjAyDJTzEtBjDUfAz@mArBUb@w@x@', 'RW 17', '17', 0, '#992600'),
+(21, '|hzh@qegoSs@Q{@eCeAuBKyANw@Ok@qBuAG[T{@b@_Aj@WqEs@GiAJyBLmCC]lAa@dC@hB\\d@HzA`@DZt@lB~@`CQnCDz@xB@fC^jC\\dCf@Qv@MlBOvCCv@}@L?GwC]_BHGq@_@g@uBFwAEJ`@@L[`AOn@Oz@', 'RW 08', '8', 0, '#1a1a00'),
+(22, 'r{yh@s}goSeCe@cBa@mBe@yEcAzAuEp@Y\\mAZoBxCdA~Bf@l@Fl@X@R?fAB\\SlEG~@', 'RW 09', '9', 0, '#808000'),
+(23, '`|yh@gihoS?yAb@yA^sCLwA@wANMj@YlFdBjA`@_@bAeA`DV^W|@Yt@MX_AOc@KaCAK@cA^', 'RW 20', '20', 0, '#ff6600'),
+(24, 'r~yh@ayhoSFYp@w@BaABOSmEbAA\\PnARf@HJJhCv@hATuAbEDP@^U~@KTgFcBqAc@', 'RW 21', '21', 0, '#004d4d'),
+(25, 'hpyh@sphoS`@kCF_@DWZk@`@u@b@k@KS?W`@s@jA}@q@{CsA{AYGTy@`@Sr@sAbAC`@CVAPHPCJLn@pAj@tA^l@Lp@JvBFrACTE~@q@t@EX?vAQnBQzAMl@a@lAk@_@i@AeAQeAYkBu@', 'RW 10', '10', 0, '#99004d'),
+(26, 'tpzh@{fioSy@a@cCUc@McBo@GWaBe@m@{@gBkAg@OQTi@hBJHf@bAb@bAN`@`@n@Jn@fACVRrARd@HJNhAVz@ZlAR\\w@\\gA', 'RW 23', '23', 0, '#992600'),
+(27, 'tpzh@yfioSy@c@_CUkC}@GWaBg@k@w@eBkAk@Qt@mCp@Of@HjB|@bE|AJ`@zD`Cf@PIJ', 'RW 25', '25', 0, '#4d0099'),
+(28, 'vrzh@ikioSe@O{@k@aCwAKc@wAi@aC}@uAs@e@Gu@NyAmBaAWEo@AYOKqAc@Oq@g@Mq@W[DSAOKKQYc@QMYu@DkDo@qBtBEdBj@n@RPh@rCvAHAf@_Aj@Vv@\\jB|@`CJpDz@|Bl@v@~Af@~@FhAe@`CE^Dh@BNb@j@TVLZWz@Uv@', 'RW 01', '1', 0, '#001a00'),
+(29, '|ryh@chioSSCk@Kq@GOC}@Ac@Za@dAIXe@PgA[a@CiAI_AGa@P}@y@o@m@o@e@TcA^_BViAj@aAPWFqBBu@@EFy@B]HgAD_@TwALw@Jo@j@cAXk@dAgBt@[F?x@DJ?h@AZCL^`@lAAbAChBXt@PNd@r@NJR@ZEp@Vf@LNp@jA`@F@LJFhAp@PNDRVj@t@Z^M`@YdAMd@QTQj@Wz@QBQIeADw@BU`@Wf@EHa@RQl@', 'RW 11', '11', 0, '#000066');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `map_point`
+-- Struktur dari tabel `map_point`
 --
 
 CREATE TABLE IF NOT EXISTS `map_point` (
@@ -107,10 +107,10 @@ CREATE TABLE IF NOT EXISTS `map_point` (
   `alamat` varchar(50) NOT NULL,
   `id_kategori` int(2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=45 ;
 
 --
--- Dumping data for table `map_point`
+-- Dumping data untuk tabel `map_point`
 --
 
 INSERT INTO `map_point` (`id`, `koordinat`, `nama`, `alamat`, `id_kategori`) VALUES
@@ -137,7 +137,7 @@ INSERT INTO `map_point` (`id`, `koordinat`, `nama`, `alamat`, `id_kategori`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
@@ -149,7 +149,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`username`, `password`, `email`, `nama`) VALUES
