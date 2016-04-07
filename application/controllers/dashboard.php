@@ -38,6 +38,64 @@ class Dashboard extends CI_Controller
 		$this->load->view('admin/template', $data);
 	}
 
+	function galeri($aksi=NULL)
+	{
+		$id = $this->uri->segment(4);
+		if ($aksi=="save") {
+			$this->form_validation->set_rules('nm_kegiatan','Nama Kegiatan','required');
+			if($this->form_validation->run()===TRUE) {
+				if(!empty($_FILES['foto']['name']))
+				{
+					$ext = end(explode(".", $_FILES['foto']['name']));
+					$rand = rand(000,999);
+					$name = date("Ymd").$rand.'.'.$ext;
+					$unggah = $this->supermodel->unggah_gambar('galeri/','foto',$name,true);
+					if($unggah===false) {
+						$pesan = "Error.. upload foto gagal";
+						$this->session->flashdata('msg','<div class="alert alert-danger>'.$pesan.'</div>');
+						redirect('dashboard/galeri/');
+					} else {
+						$cek = $this->supermodel->queryManual("SELECT * FROM galeri WHERE id='$id' ")->row();
+						if($cek->foto!='') {
+							@unlink('./uploads/galeri/'.$cek->foto);
+							@unlink('./uploads/galeri/thumb/'.$cek->foto);
+						}
+
+						$in['nm_kegiatan'] = $this->input->post('nm_kegiatan');
+						$in['foto'] = $name;
+
+						if($id=='') {
+							$this->supermodel->insertData('galeri',$in);
+						} else {
+							$this->supermodel->updateData('galeri',$in,'galeri_id',$id);
+						}
+						$pesan = "Sukses.. data tersimpan";
+						$this->session->flashdata('msg','<div class="alert alert-success>'.$pesan.'</div>');
+						redirect('dashboard/galeri/');
+					}
+					
+				} else {
+					$pesan = "Error.. foto belum dipilih";
+					$this->session->flashdata('msg','<div class="alert alert-danger>'.$pesan.'</div>');
+					redirect('dashboard/galeri/');
+				}
+			}
+		}
+
+		$data['list'] = array(
+			'id'=>'',
+			'nm_kegiatan'=>'',
+			'foto'=>''
+			);
+
+		if($id!='') {
+			$data['list'] = $this->supermodel->queryManual("SELECT * FROM galeri WHERE id='$id' ")->row_array();
+		}
+		$data['listdata'] = $this->supermodel->queryManual("SELECT * FROM galeri ORDER BY id DESC");
+		$data['konten'] = 'admin/galeri';
+		$this->load->view('admin/template', $data);
+	}
+
 	function editor_peta()
 	{
 		$this->form_validation->set_rules('kordinat', 'Kordinat', 'required');
@@ -78,12 +136,21 @@ class Dashboard extends CI_Controller
 	{
 		$table = $this->uri->segment(3);
 		$id = $this->uri->segment(4);
+		$gambar = $this->uri->segment(5);
 
 		if (!empty($table) && !empty($id)) {
 			# code...
+			if($gambar!='') {
+				$cek = $this->supermodel->queryManual("SELECT * FROM $table WHERE id='$id' ")->row();
+				if($cek->foto!='') {
+					@unlink('./uploads/galeri/'.$cek->foto);
+					@unlink('./uploads/galeri/thumb/'.$cek->foto);
+				}
+			}
 			$hapus = $this->supermodel->deleteData($table, 'id', $id);
 			if ($hapus) {
 				# code...
+
 				$pesan = "Sukses.. data terhapus";
 				$this->session->flashdata('msg','<div class="alert alert-success>'.$pesan.'</div>');
 			} else {

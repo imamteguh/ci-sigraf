@@ -60,8 +60,8 @@ class Supermodel extends CI_Model {
 		$con['create_thumb'] = TRUE;
 		$con['thumb_marker'] = '';
 		$con['maintain_ratio'] = TRUE;
-		$con['width'] = 75;
-		$con['height'] = 50;
+		$con['width'] = 150;
+		$con['height'] = 150;
 
 		$this->load->library('image_lib', $con);
 

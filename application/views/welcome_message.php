@@ -15,6 +15,7 @@
 		<link rel="stylesheet" href="<?php echo base_url() ?>assets/font-awesome/4.2.0/css/font-awesome.min.css" />
 
 		<!-- page specific plugin styles -->
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/colorbox.min.css" />
 
 		<!-- text fonts -->
 		<link rel="stylesheet" href="<?php echo base_url() ?>assets/fonts/fonts.googleapis.com.css" />
@@ -42,7 +43,7 @@
 				</button>
 
 				<div class="navbar-header pull-left">
-					<a href="index.html" class="navbar-brand">
+					<a href="<?php echo site_url() ?>" class="navbar-brand">
 						<small>
 							<i class="fa fa-leaf"></i>
 							Profil Desa Tanimulya
@@ -59,7 +60,7 @@
 
 				<ul class="nav nav-list">
 					<li class="">
-						<a href="<?php echo site_url() ?>">
+						<a href="<?php echo site_url('welcome') ?>">
 							<i class="menu-icon fa fa-home"></i>
 							<span class="menu-text"> Beranda </span>
 						</a>
@@ -95,6 +96,15 @@
 								<b class="arrow"></b>
 							</li>
 						</ul>
+					</li>
+
+					<li class="">
+						<a href="<?php echo site_url('welcome/galeri') ?>">
+							<i class="menu-icon fa fa-photo"></i>
+							<span class="menu-text"> Galeri Kegiatan </span>
+						</a>
+
+						<b class="arrow"></b>
 					</li>
 
 					<li class="">

@@ -8,6 +8,17 @@ class Welcome extends CI_Controller {
 		$this->load->model('supermodel');
 	}
 
+	function spash()
+	{
+		$this->load->view('spashscreen');
+	}
+
+	function galeri()
+	{
+		$data['konten'] = 'galeri';
+		$this->load->view('welcome_message', $data);
+	}
+
 	function index()
 	{
 		$data['kantor'] = $this->supermodel->queryManual("SELECT * FROM map_point a, map_kategori b WHERE a.id_kategori=b.id_kategori AND a.id_kategori=1");

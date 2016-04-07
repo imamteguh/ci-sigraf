@@ -313,151 +313,151 @@
 
     function rwlabels()
     {
-    	var image = 'http://localhost/tanimulya/assets/img/RW13.png';
+    	var image = '<?php echo base_url() ?>assets/img/RW13.png';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(-6.862817575265996, 107.51536130905151),
 			map: maphy,
 			icon: image
 		});
-		var image = 'http://localhost/tanimulya/assets/img/RW12.png';
+		var image = '<?php echo base_url() ?>assets/img/RW12.png';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(-6.864990571162614, 107.51701354980469),
 			map: maphy,
 			icon: image
 		});
-		var image = 'http://localhost/tanimulya/assets/img/RW14.png';
+		var image = '<?php echo base_url() ?>assets/img/RW14.png';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(-6.861091953811461, 107.51733541488647),
 			map: maphy,
 			icon: image
 		});
-		    	var image = 'http://localhost/tanimulya/assets/img/RW5.png';
+		    	var image = '<?php echo base_url() ?>assets/img/RW5.png';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(-6.866343362616717, 107.52052187919617),
 			map: maphy,
 			icon: image
 		});
-		    	var image = 'http://localhost/tanimulya/assets/img/RW4.png';
+		    	var image = '<?php echo base_url() ?>assets/img/RW4.png';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(-6.864292870130035, 107.52187371253967),
 			map: maphy,
 			icon: image
 		});
-		    	var image = 'http://localhost/tanimulya/assets/img/RW3.png';
+		    	var image = '<?php echo base_url() ?>assets/img/RW3.png';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(-6.8643088480277115, 107.52481341362),
 			map: maphy,
 			icon: image
 		});
-		    	var image = 'http://localhost/tanimulya/assets/img/RW2.png';
+		    	var image = '<?php echo base_url() ?>assets/img/RW2.png';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(-6.863105178233672, 107.53047287464142),
 			map: maphy,
 			icon: image
 		});
-		    	var image = 'http://localhost/tanimulya/assets/img/RW15.png';
+		    	var image = '<?php echo base_url() ?>assets/img/RW15.png';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(-6.862135849018972, 107.52575755119324),
 			map: maphy,
 			icon: image
 		});
-		    	var image = 'http://localhost/tanimulya/assets/img/RW24.png';
+		    	var image = '<?php echo base_url() ?>assets/img/RW24.png';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(-6.8583490549883095, 107.52006590366364),
 			map: maphy,
 			icon: image
 		});
-		    	var image = 'http://localhost/tanimulya/assets/img/RW8.png';
+		    	var image = '<?php echo base_url() ?>assets/img/RW8.png';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(-6.856144072444067, 107.5237888097763),
 			map: maphy,
 			icon: image
 		});
-		    	var image = 'http://localhost/tanimulya/assets/img/RW7.png';
+		    	var image = '<?php echo base_url() ?>assets/img/RW7.png';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(-6.8595687148619815, 107.52504408359528),
 			map: maphy,
 			icon: image
 		});
-		    	var image = 'http://localhost/tanimulya/assets/img/RW6.png';
+		    	var image = '<?php echo base_url() ?>assets/img/RW6.png';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(-6.860495441236828, 107.51958847045898),
 			map: maphy,
 			icon: image
 		});
-		    	var image = 'http://localhost/tanimulya/assets/img/RW18.png';
+		    	var image = '<?php echo base_url() ?>assets/img/RW18.png';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(-6.8588230716420915, 107.52691626548767),
 			map: maphy,
 			icon: image
 		});
-		    	var image = 'http://localhost/tanimulya/assets/img/RW19.png';
+		    	var image = '<?php echo base_url() ?>assets/img/RW19.png';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(-6.859909579945142, 107.52814471721649),
 			map: maphy,
 			icon: image
 		});
-		    	var image = 'http://localhost/tanimulya/assets/img/RW16.png';
+		    	var image = '<?php echo base_url() ?>assets/img/RW16.png';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(-6.8612410818383704, 107.52837538719177),
 			map: maphy,
 			icon: image
 		});
-		    	var image = 'http://localhost/tanimulya/assets/img/RW22.png';
+		    	var image = '<?php echo base_url() ?>assets/img/RW22.png';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(-6.858215904158004, 107.5296601653099),
 			map: maphy,
 			icon: image
 		});
-		    	var image = 'http://localhost/tanimulya/assets/img/RW17.png';
+		    	var image = '<?php echo base_url() ?>assets/img/RW17.png';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(-6.861075975805812, 107.53225386142731),
 			map: maphy,
 			icon: image
 		});
-		    	var image = 'http://localhost/tanimulya/assets/img/RW1.png';
+		    	var image = '<?php echo base_url() ?>assets/img/RW1.png';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(-6.857491562989256, 107.53544569015503),
 			map: maphy,
 			icon: image
 		});
-		    	var image = 'http://localhost/tanimulya/assets/img/RW9.png';
+		    	var image = '<?php echo base_url() ?>assets/img/RW9.png';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(-6.853997666592581, 107.5261116027832),
 			map: maphy,
 			icon: image
 		});
-		    	var image = 'http://localhost/tanimulya/assets/img/RW10.png';
+		    	var image = '<?php echo base_url() ?>assets/img/RW10.png';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(-6.854711360926071, 107.52965211868286),
 			map: maphy,
 			icon: image
 		});
-		    	var image = 'http://localhost/tanimulya/assets/img/RW11.png';
+		    	var image = '<?php echo base_url() ?>assets/img/RW11.png';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(-6.851782011704967, 107.53370761871338),
 			map: maphy,
 			icon: image
 		});
-		    	var image = 'http://localhost/tanimulya/assets/img/RW20.png';
+		    	var image = '<?php echo base_url() ?>assets/img/RW20.png';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(-6.85628787596451, 107.52752780914307),
 			map: maphy,
 			icon: image
 		});
-		    	var image = 'http://localhost/tanimulya/assets/img/RW21.png';
+		    	var image = '<?php echo base_url() ?>assets/img/RW21.png';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(-6.856937654293613, 107.52990961074829),
 			map: maphy,
 			icon: image
 		});
-		    	var image = 'http://localhost/tanimulya/assets/img/RW23.png';
+		    	var image = '<?php echo base_url() ?>assets/img/RW23.png';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(-6.855931030111772, 107.5319454073906),
 			map: maphy,
 			icon: image
 		});
-		    	var image = 'http://localhost/tanimulya/assets/img/RW25.png';
+		    	var image = '<?php echo base_url() ?>assets/img/RW25.png';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(-6.857406346308759, 107.53263473510742),
 			map: maphy,

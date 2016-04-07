@@ -162,6 +162,15 @@
 						<b class="arrow"></b>
 					</li>
 
+					<li class="">
+						<a href="<?php echo site_url('dashboard/galeri') ?>">
+							<i class="menu-icon fa fa-photo"></i>
+							<span class="menu-text"> Galeri </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
 				</ul><!-- /.nav-list -->
 
 				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
@@ -241,6 +250,18 @@
 		<script>
 		jQuery(function($) {
 				$('#examtable').dataTable();
+				$('#id-input-file-2').ace_file_input({
+					no_file:'No File ...',
+					btn_choose:'Choose',
+					btn_change:'Change',
+					droppable:false,
+					onchange:null,
+					thumbnail:true, //| true | large
+					whitelist:'gif|png|jpg|jpeg',
+					blacklist:'exe|php'
+					//onchange:''
+					//
+				});
 		})
 		</script>
 	</body>
