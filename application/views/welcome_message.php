@@ -90,7 +90,15 @@
 							<li class="">
 								<a href="<?php echo site_url('welcome/grafik_kk') ?>">
 									<i class="menu-icon fa fa-caret-right"></i>
-									Kepeilikan KK
+									Kepemilikan KK
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="<?php echo site_url('welcome/grafik_pddk') ?>">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Pendidikan
 								</a>
 
 								<b class="arrow"></b>

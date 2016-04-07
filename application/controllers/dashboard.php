@@ -11,7 +11,7 @@ class Dashboard extends CI_Controller
 		parent::__construct();
 		$this->load->model('supermodel');
 		if($this->session->userdata('get_login')=="") {
-			$this->session->set_flashdata('error','<div class="alert alert-danger">Mohon maaf anda tidak mempunyai akses..</div>');
+			$this->session->set_set_flashdata('error','<div class="alert alert-danger">Mohon maaf anda tidak mempunyai akses..</div>');
 			redirect('login/index');
 		}
 	}
@@ -52,7 +52,7 @@ class Dashboard extends CI_Controller
 					$unggah = $this->supermodel->unggah_gambar('galeri/','foto',$name,true);
 					if($unggah===false) {
 						$pesan = "Error.. upload foto gagal";
-						$this->session->flashdata('msg','<div class="alert alert-danger>'.$pesan.'</div>');
+						$this->session->set_flashdata('msg','<div class="alert-danger>'.$pesan.'</div>');
 						redirect('dashboard/galeri/');
 					} else {
 						$cek = $this->supermodel->queryManual("SELECT * FROM galeri WHERE id='$id' ")->row();
@@ -67,16 +67,22 @@ class Dashboard extends CI_Controller
 						if($id=='') {
 							$this->supermodel->insertData('galeri',$in);
 						} else {
-							$this->supermodel->updateData('galeri',$in,'galeri_id',$id);
+							$this->supermodel->updateData('galeri',$in,'id',$id);
 						}
 						$pesan = "Sukses.. data tersimpan";
-						$this->session->flashdata('msg','<div class="alert alert-success>'.$pesan.'</div>');
+						$this->session->set_flashdata('msg','<div class="alert-success>'.$pesan.'</div>');
 						redirect('dashboard/galeri/');
 					}
 					
+				} elseif(!empty($_POST['infoto']) && empty($_FILES['foto']['name'])) {
+					$in['nm_kegiatan'] = $this->input->post('nm_kegiatan');
+					$this->supermodel->updateData('galeri',$in,'id',$id);
+					$pesan = "Sukses.. data tersimpan";
+					$this->session->set_flashdata('msg','<div class="alert-success>'.$pesan.'</div>');
+					redirect('dashboard/galeri/');
 				} else {
 					$pesan = "Error.. foto belum dipilih";
-					$this->session->flashdata('msg','<div class="alert alert-danger>'.$pesan.'</div>');
+					$this->session->set_flashdata('msg','<div class="alert-danger>'.$pesan.'</div>');
 					redirect('dashboard/galeri/');
 				}
 			}
@@ -152,14 +158,14 @@ class Dashboard extends CI_Controller
 				# code...
 
 				$pesan = "Sukses.. data terhapus";
-				$this->session->flashdata('msg','<div class="alert alert-success>'.$pesan.'</div>');
+				$this->session->set_flashdata('msg','<div class="alert alert-success>'.$pesan.'</div>');
 			} else {
 				$pesan = "Error.. data tidak terhapus";
-				$this->session->flashdata('msg','<div class="alert alert-danger>'.$pesan.'</div>');
+				$this->session->set_flashdata('msg','<div class="alert alert-danger>'.$pesan.'</div>');
 			}
 		} else {
 			$pesan = "Error... query gagal dijalankan";
-			$this->session->flashdata('msg','<div class="alert alert-danger>'.$pesan.'</div>');
+			$this->session->set_flashdata('msg','<div class="alert alert-danger>'.$pesan.'</div>');
 		}
 
 		echo "<script>window.history.back();</script>";

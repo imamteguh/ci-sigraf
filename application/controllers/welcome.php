@@ -15,6 +15,7 @@ class Welcome extends CI_Controller {
 
 	function galeri()
 	{
+		$data['listdata'] = $this->supermodel->queryManual("SELECT * FROM galeri ORDER BY id DESC");
 		$data['konten'] = 'galeri';
 		$this->load->view('welcome_message', $data);
 	}
@@ -44,6 +45,12 @@ class Welcome extends CI_Controller {
 	function grafik_kk()
 	{
 		$data['konten'] = 'grafik_kk';
+		$this->load->view('welcome_message', $data);
+	}
+	function grafik_pddk()
+	{
+		$data['kategori'] = $this->supermodel->queryManual("SELECT * FROM kat_pend");
+		$data['konten'] = 'grafik_pddk';
 		$this->load->view('welcome_message', $data);
 	}
 

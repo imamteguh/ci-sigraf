@@ -11,7 +11,6 @@
 <div class="row">
 
 <div class="col-md-12">
-	<?php echo $this->session->flashdata('msg') ?>
 
 	<form class="form-horizontal" role="form" method="post" action="<?php echo site_url('dashboard/galeri/save/'.$list['id']) ?>" enctype="multipart/form-data">
 		<div class="form-group">
@@ -27,6 +26,7 @@
 
 			<div class="col-sm-9">
 				<input type="file" id="id-input-file-2" class="col-xs-10 col-sm-5" name="foto" />
+				<input type="hidden" name="infoto" value="<?php echo $list['foto'] ?>">
 			</div>
 		</div>
 		<div class="form-group">
@@ -77,6 +77,7 @@
 			<td><img src="<?php echo base_url('uploads/galeri/thumb/'.$rows->foto) ?>"></td>
 			<td><?php echo $rows->nm_kegiatan ?></td>
 			<td>
+				<a href="<?php echo site_url('dashboard/galeri/edit/'.$rows->id) ?>" class="btn btn-xs btn-success"><i class="fa fa-pencil"></i> edit</a>
 				<a href="<?php echo site_url('dashboard/hapus/galeri/'.$rows->id.'/yes') ?>" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Hapus</a>
 			</td>
 		</tr>

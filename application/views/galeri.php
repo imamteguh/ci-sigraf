@@ -14,14 +14,20 @@
 		<!-- PAGE CONTENT BEGINS -->
 		<div>
 			<ul class="ace-thumbnails clearfix">
+			<?php
+			foreach ($listdata->result() as $rows) {
+			?>
 				<li>
-					<a href="<?php echo base_url() ?>assets/images/gallery/image-2.jpg" data-rel="colorbox" title="wew">
-						<img width="150" height="150" alt="150x150" src="<?php echo base_url() ?>assets/images/gallery/thumb-2.jpg" />
+					<a href="<?php echo base_url('uploads/galeri/'.$rows->foto) ?>" data-rel="colorbox" title="<?php echo $rows->nm_kegiatan; ?>">
+						<img width="150" height="150" alt="150x150" src="<?php echo base_url('uploads/galeri/thumb/'.$rows->foto) ?>" />
 						<div class="text">
-							<div class="inner">Sample Caption on Hover</div>
+							<div class="inner"><?php echo $rows->nm_kegiatan; ?></div>
 						</div>
 					</a>
 				</li>
+				<?php
+			}
+			?>
 			</ul>
 		</div><!-- PAGE CONTENT ENDS -->
 	</div><!-- /.col -->

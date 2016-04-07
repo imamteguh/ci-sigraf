@@ -43,7 +43,7 @@
 				<div class="logo">
 					<img src="<?php echo base_url('assets/img/index.png') ?>" width="75">
 				</div>
-				<h1>Profil Desa Tanimulya <span>Kabupaten Bandung Barat</span></h1>
+				<h1>Profil Desa Tanimulya <span>Kabupaten Bandung Barat - Kecamatan Ngamprah</span></h1>
 
 				<nav class="codrops-demos">
 					<a href="<?php echo site_url('welcome') ?>"> > Masuk </a>

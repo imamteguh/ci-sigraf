@@ -110,5 +110,29 @@ class api_sistem extends CI_Controller
 
 		$this->load->view('chart/kk_rt', $data);
 	}
+
+	function get_pddk_rw()
+	{
+		$id = $_GET['id'];
+		$link = "http://192.168.152.116:8082/disduk/webservice/pendidikan/pddk_rw.php?id_pddk=".$id;
+		$konten = file_get_contents($link);
+		$json_decode = json_decode($konten, true);
+
+		$data['datax'] = $json_decode;
+
+		$this->load->view('chart/pddk_rw', $data);
+	}
+	function get_pddk_rt()
+	{
+		$id = $_GET['id'];
+		$rw = $_GET['rw'];
+		$link = "http://192.168.152.116:8082/disduk/webservice/pendidikan/pddk_rt_var.php?id_rw=".$rw.'&id_pddk='.$id;
+		$konten = file_get_contents($link);
+		$json_decode = json_decode($konten, true);
+
+		$data['datax'] = $json_decode;
+
+		$this->load->view('chart/pddk_rt', $data);
+	}
 }
 ?>
