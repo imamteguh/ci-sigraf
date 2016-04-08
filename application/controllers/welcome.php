@@ -53,6 +53,18 @@ class Welcome extends CI_Controller {
 		$data['konten'] = 'grafik_pddk';
 		$this->load->view('welcome_message', $data);
 	}
+	function grafik_perker()
+	{
+		$data['kategori'] = $this->supermodel->queryManual("SELECT * FROM kat_perker");
+		$data['konten'] = 'grafik_perker';
+		$this->load->view('welcome_message', $data);
+	}
+	function grafik_agama()
+	{
+		$data['kategori'] = $this->supermodel->queryManual("SELECT * FROM kode_agama");
+		$data['konten'] = 'grafik_agama';
+		$this->load->view('welcome_message', $data);
+	}
 
 	// xml polygon
 	function api_area()

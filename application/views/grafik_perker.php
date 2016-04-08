@@ -6,7 +6,7 @@
             <div class="widget-header widget-header-flat widget-header-small">
                 <h5 class="widget-title">
                     <i class="ace-icon fa fa-signal"></i>
-                    Jumlah Penduduk Berdasarkan Pendidikan
+                    Jumlah Penduduk Berdasarkan Pekerjaan
                 </h5>
             </div>
 
@@ -23,13 +23,13 @@
             <div class="widget-header widget-header-flat widget-header-small">
                 <h5 class="widget-title">
                     <i class="ace-icon fa fa-signal"></i>
-                    Grafik Jumlah Penduduk Berdasarkan Pendidikan
+                    Grafik Jumlah Penduduk Berdasarkan Pekerjaan
                 </h5>
             </div>
 
             <div class="widget-body">
                 <center>
-                <span>Kategori Pendidikan</span>
+                <span>Kategori Pekerjaan</span>
                 <select id="kat_pend" style="padding: 2px 5px; width: 250px; margin: 10px;" onchange="getRw(); getRt()">
                     <?php
                     foreach ($kategori->result() as $row) {
@@ -78,7 +78,7 @@ function getRt()
         rw = 1;
     }
     $.ajax({
-        url : "<?php echo site_url('api_sistem/get_pddk_rt') ?>",
+        url : "<?php echo site_url('api_sistem/get_perker_rt') ?>",
         data : "rw="+rw+"&id="+id,
         success: function(data) {
             $("#load_grafikrt").html(data);
@@ -90,7 +90,7 @@ function getRw()
 {
     var id = document.getElementById('kat_pend').value;
     $.ajax({
-        url : "<?php echo site_url('api_sistem/get_pddk_rw') ?>",
+        url : "<?php echo site_url('api_sistem/get_perker_rw') ?>",
         data : "id="+id,
         success: function(data) {
             $("#load_grafikrw").html(data);
@@ -112,7 +112,7 @@ function getDropdownRw()
 function getPie()
 {
     $.ajax({
-        url : "<?php echo site_url('api_sistem/get_pddk_pie') ?>",
+        url : "<?php echo site_url('api_sistem/get_perker_pie') ?>",
         data : "",
         success: function(data) {
             $("#load_pie").html(data);

@@ -134,5 +134,83 @@ class api_sistem extends CI_Controller
 
 		$this->load->view('chart/pddk_rt', $data);
 	}
+	function get_pddk_pie()
+	{
+		$link = "http://192.168.152.116:8082/disduk/webservice/pendidikan/pddk_rw_all.php";
+		$konten = file_get_contents($link);
+		$json_decode = json_decode($konten, true);
+
+		$data['datax'] = $json_decode;
+
+		$this->load->view('chart/pddk_pie', $data);
+	}
+
+	function get_perker_rw()
+	{
+		$id = $_GET['id'];
+		$link = "http://192.168.152.116:8082/disduk/webservice/pekerjaan/pekerjaan_rw.php?id=".$id;
+		$konten = file_get_contents($link);
+		$json_decode = json_decode($konten, true);
+
+		$data['datax'] = $json_decode;
+
+		$this->load->view('chart/perker_rw', $data);
+	}
+	function get_perker_rt()
+	{
+		$id = $_GET['id'];
+		$rw = $_GET['rw'];
+		$link = "http://192.168.152.116:8082/disduk/webservice/pekerjaan/pekerjaan_rt_var.php?id_rw=".$rw.'&id='.$id;
+		$konten = file_get_contents($link);
+		$json_decode = json_decode($konten, true);
+
+		$data['datax'] = $json_decode;
+
+		$this->load->view('chart/perker_rt', $data);
+	}
+	function get_perker_pie()
+	{
+		$link = "http://192.168.152.116:8082/disduk/webservice/pekerjaan/pekerjaan_rw_all.php";
+		$konten = file_get_contents($link);
+		$json_decode = json_decode($konten, true);
+
+		$data['datax'] = $json_decode;
+
+		$this->load->view('chart/perker_pie', $data);
+	}
+
+	function get_agama_rw()
+	{
+		$id = $_GET['id'];
+		$link = "http://192.168.152.116:8082/disduk/webservice/agama/agama_rw.php?id=".$id;
+		$konten = file_get_contents($link);
+		$json_decode = json_decode($konten, true);
+
+		$data['datax'] = $json_decode;
+
+		$this->load->view('chart/agama_rw', $data);
+	}
+	function get_agama_rt()
+	{
+		$id = $_GET['id'];
+		$rw = $_GET['rw'];
+		$link = "http://192.168.152.116:8082/disduk/webservice/agama/agama_rt_var.php?id_rw=".$rw.'&id='.$id;
+		$konten = file_get_contents($link);
+		$json_decode = json_decode($konten, true);
+
+		$data['datax'] = $json_decode;
+
+		$this->load->view('chart/agama_rt', $data);
+	}
+	function get_agama_pie()
+	{
+		$link = "http://192.168.152.116:8082/disduk/webservice/agama/agama_rw_all.php";
+		$konten = file_get_contents($link);
+		$json_decode = json_decode($konten, true);
+
+		$data['datax'] = $json_decode;
+
+		$this->load->view('chart/agama_pie', $data);
+	}
 }
 ?>

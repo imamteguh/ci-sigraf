@@ -103,6 +103,22 @@
 
 								<b class="arrow"></b>
 							</li>
+							<li class="">
+								<a href="<?php echo site_url('welcome/grafik_perker') ?>">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Pekerjaan
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="<?php echo site_url('welcome/grafik_agama') ?>">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Agama
+								</a>
+
+								<b class="arrow"></b>
+							</li>
 						</ul>
 					</li>
 
