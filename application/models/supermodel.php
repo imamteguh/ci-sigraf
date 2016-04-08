@@ -73,7 +73,7 @@ class Supermodel extends CI_Model {
 	{
 		$config['upload_path'] = './uploads/'.$path;
 		$config['allowed_types'] = 'jpg|jpeg|gif|png|pdf';
-		$config['max_size'] = '2200';
+		$config['max_size'] = '8200';
 		if($rename!=null) {
 			$config['file_name'] = $rename;
 		}

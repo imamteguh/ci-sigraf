@@ -34,9 +34,22 @@ class api_sistem extends CI_Controller
 		echo '</markers>';
 	}
 
+	function get_chart()
+	{
+		$rw = $_GET['id_rw'];
+		$link = "http://localhost:8082/disduk/webservice/jumduk/rt_var.php?id_rw=".$rw;
+		$konten = file_get_contents($link);
+		$json_decode = json_decode($konten, true);
+
+		$data['datax'] = $json_decode;
+		$data['judul'] = $rw;
+
+		$this->load->view('highchart', $data);
+	}
+
 	function get_dropdown_rw()
 	{
-		$link = "http://192.168.152.116:8082/disduk/webservice/jumduk/rw.php";
+		$link = "http://localhost:8082/disduk/webservice/jumduk/rw.php";
 		$konten = file_get_contents($link);
 		$json_decode = json_decode($konten, true);
 
@@ -48,7 +61,7 @@ class api_sistem extends CI_Controller
 
 	function get_jumduk_rw()
 	{
-		$link = "http://192.168.152.116:8082/disduk/webservice/jumduk/rw.php";
+		$link = "http://localhost:8082/disduk/webservice/jumduk/rw.php";
 		$konten = file_get_contents($link);
 		$json_decode = json_decode($konten, true);
 
@@ -59,7 +72,7 @@ class api_sistem extends CI_Controller
 
 	function get_jumduk()
 	{
-		$link = "http://192.168.152.116:8082/disduk/webservice/jumduk/rw.php";
+		$link = "http://localhost:8082/disduk/webservice/jumduk/rw.php";
 		$konten = file_get_contents($link);
 		$json_decode = json_decode($konten, true);
 
@@ -80,7 +93,7 @@ class api_sistem extends CI_Controller
 	function get_jumduk_rt()
 	{
 		$rw = $_GET['rw'];
-		$link = "http://192.168.152.116:8082/disduk/webservice/jumduk/rt_var.php?id_rw=".$rw;
+		$link = "http://localhost:8082/disduk/webservice/jumduk/rt_var.php?id_rw=".$rw;
 		$konten = file_get_contents($link);
 		$json_decode = json_decode($konten, true);
 
@@ -91,7 +104,7 @@ class api_sistem extends CI_Controller
 
 	function get_kk_rw()
 	{
-		$link = "http://192.168.152.116:8082/disduk/webservice/kk/kk_rw.php";
+		$link = "http://localhost:8082/disduk/webservice/kk/kk_rw.php";
 		$konten = file_get_contents($link);
 		$json_decode = json_decode($konten, true);
 
@@ -102,7 +115,7 @@ class api_sistem extends CI_Controller
 	function get_kk_rt()
 	{
 		$rw = $_GET['rw'];
-		$link = "http://192.168.152.116:8082/disduk/webservice/kk/kk_rt_var.php?id_rw=".$rw;
+		$link = "http://localhost:8082/disduk/webservice/kk/kk_rt_var.php?id_rw=".$rw;
 		$konten = file_get_contents($link);
 		$json_decode = json_decode($konten, true);
 
@@ -114,7 +127,7 @@ class api_sistem extends CI_Controller
 	function get_pddk_rw()
 	{
 		$id = $_GET['id'];
-		$link = "http://192.168.152.116:8082/disduk/webservice/pendidikan/pddk_rw.php?id_pddk=".$id;
+		$link = "http://localhost:8082/disduk/webservice/pendidikan/pddk_rw.php?id_pddk=".$id;
 		$konten = file_get_contents($link);
 		$json_decode = json_decode($konten, true);
 
@@ -126,7 +139,7 @@ class api_sistem extends CI_Controller
 	{
 		$id = $_GET['id'];
 		$rw = $_GET['rw'];
-		$link = "http://192.168.152.116:8082/disduk/webservice/pendidikan/pddk_rt_var.php?id_rw=".$rw.'&id_pddk='.$id;
+		$link = "http://localhost:8082/disduk/webservice/pendidikan/pddk_rt_var.php?id_rw=".$rw.'&id_pddk='.$id;
 		$konten = file_get_contents($link);
 		$json_decode = json_decode($konten, true);
 
@@ -136,7 +149,7 @@ class api_sistem extends CI_Controller
 	}
 	function get_pddk_pie()
 	{
-		$link = "http://192.168.152.116:8082/disduk/webservice/pendidikan/pddk_rw_all.php";
+		$link = "http://localhost:8082/disduk/webservice/pendidikan/pddk_rw_all.php";
 		$konten = file_get_contents($link);
 		$json_decode = json_decode($konten, true);
 
@@ -148,7 +161,7 @@ class api_sistem extends CI_Controller
 	function get_perker_rw()
 	{
 		$id = $_GET['id'];
-		$link = "http://192.168.152.116:8082/disduk/webservice/pekerjaan/pekerjaan_rw.php?id=".$id;
+		$link = "http://localhost:8082/disduk/webservice/pekerjaan/pekerjaan_rw.php?id=".$id;
 		$konten = file_get_contents($link);
 		$json_decode = json_decode($konten, true);
 
@@ -160,7 +173,7 @@ class api_sistem extends CI_Controller
 	{
 		$id = $_GET['id'];
 		$rw = $_GET['rw'];
-		$link = "http://192.168.152.116:8082/disduk/webservice/pekerjaan/pekerjaan_rt_var.php?id_rw=".$rw.'&id='.$id;
+		$link = "http://localhost:8082/disduk/webservice/pekerjaan/pekerjaan_rt_var.php?id_rw=".$rw.'&id='.$id;
 		$konten = file_get_contents($link);
 		$json_decode = json_decode($konten, true);
 
@@ -170,7 +183,7 @@ class api_sistem extends CI_Controller
 	}
 	function get_perker_pie()
 	{
-		$link = "http://192.168.152.116:8082/disduk/webservice/pekerjaan/pekerjaan_rw_all.php";
+		$link = "http://localhost:8082/disduk/webservice/pekerjaan/pekerjaan_rw_all.php";
 		$konten = file_get_contents($link);
 		$json_decode = json_decode($konten, true);
 
@@ -182,7 +195,7 @@ class api_sistem extends CI_Controller
 	function get_agama_rw()
 	{
 		$id = $_GET['id'];
-		$link = "http://192.168.152.116:8082/disduk/webservice/agama/agama_rw.php?id=".$id;
+		$link = "http://localhost:8082/disduk/webservice/agama/agama_rw.php?id=".$id;
 		$konten = file_get_contents($link);
 		$json_decode = json_decode($konten, true);
 
@@ -194,7 +207,7 @@ class api_sistem extends CI_Controller
 	{
 		$id = $_GET['id'];
 		$rw = $_GET['rw'];
-		$link = "http://192.168.152.116:8082/disduk/webservice/agama/agama_rt_var.php?id_rw=".$rw.'&id='.$id;
+		$link = "http://localhost:8082/disduk/webservice/agama/agama_rt_var.php?id_rw=".$rw.'&id='.$id;
 		$konten = file_get_contents($link);
 		$json_decode = json_decode($konten, true);
 
@@ -204,7 +217,7 @@ class api_sistem extends CI_Controller
 	}
 	function get_agama_pie()
 	{
-		$link = "http://192.168.152.116:8082/disduk/webservice/agama/agama_rw_all.php";
+		$link = "http://localhost:8082/disduk/webservice/agama/agama_rw_all.php";
 		$konten = file_get_contents($link);
 		$json_decode = json_decode($konten, true);
 

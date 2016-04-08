@@ -70,7 +70,7 @@
 	          bounds.extend(decodedPolygon[j]);
 	        }
 
-	        var html = "<?php echo site_url('welcome/get_chart') ?>?id_rw=" + link;
+	        var html = "<?php echo site_url('api_sistem/get_chart') ?>?id_rw=" + link;
 	        // Construct the polygon.
 	        var bermudaTriangle = new google.maps.Polygon({
 	            paths: decodedPolygon,
