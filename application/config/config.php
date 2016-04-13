@@ -22,7 +22,9 @@
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost:8084/tanimulya/';
+// $config['base_url'] = 'http://localhost/tanimulya/';
+$config['base_url'] = 'http://localhost/ci-sigraf/';
+
 
 // config tambahan
 $config['kode_prov'] = '32';

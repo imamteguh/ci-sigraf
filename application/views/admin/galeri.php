@@ -12,6 +12,8 @@
 
 <div class="col-md-12">
 
+	<?php echo $this->session->flashdata('msg') ?>
+
 	<form class="form-horizontal" role="form" method="post" action="<?php echo site_url('dashboard/galeri/save/'.$list['id']) ?>" enctype="multipart/form-data">
 		<div class="form-group">
 			<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Nama Kegiatan</label>
@@ -91,3 +93,26 @@
 </div>
 
 </div>
+
+<script src="<?php echo base_url() ?>assets/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url() ?>assets/js/jquery.dataTables.bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	
+jQuery(function($) {
+	$('#examtable').dataTable();
+	$('#id-input-file-2').ace_file_input({
+		no_file:'No File ...',
+		btn_choose:'Choose',
+		btn_change:'Change',
+		droppable:false,
+		onchange:null,
+		thumbnail:true, //| true | large
+		whitelist:'gif|png|jpg|jpeg',
+		blacklist:'exe|php'
+		//onchange:''
+		//
+	});
+})
+
+</script>

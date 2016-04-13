@@ -4,200 +4,145 @@
 		<meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <title>Profil Desa Tanimulya</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <meta name="description" content="Fullscreen Slit Slider with CSS3 and jQuery" />
-        <meta name="keywords" content="slit slider, plugin, css3, transitions, jquery, fullscreen, autoplay" />
-        <meta name="author" content="Codrops" />
         <link rel="icon" href="<?php echo base_url('assets/img/index.png') ?>">
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/slider/css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/slider/css/style.css" />
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/slider/css/custom.css" />
-		<script type="text/javascript" src="<?php echo base_url() ?>assets/slider/js/modernizr.custom.79639.js"></script>
-		<noscript>
-			<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/slider/css/styleNoJS.css" />
-		</noscript>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-		<style>
-		/*.container {
-			width: 100%;
-			height: 100%;
-			position: absolute;
-			bottom: 0;
-			top: 0;
-		}
-		.demo-2 .sl-slider-wrapper {
-			height: 100%;
-		}*/
-		.logo {
-			float: left;
-			margin-right: 10px;
-		}
-		</style>
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style-portal.css" />
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/font-awesome/4.2.0/css/font-awesome.min.css" />
+
+		<link rel="stylesheet" href="<?php echo base_url() ?>assets/plugin/jsor/style_jsor.css" />
+		
     </head>
     <body>
-        
-        <div class="container demo-2">
 
-        	<header class="clearfix" style="padding-top:10px;padding-bottom:10px;">
-				
-				<div class="logo">
-					<img src="<?php echo base_url('assets/img/index.png') ?>" width="75">
-				</div>
-				<h1>Profil Desa Tanimulya <span>Kabupaten Bandung Barat - Kecamatan Ngamprah</span></h1>
-
-				<nav class="codrops-demos">
-					<a href="<?php echo site_url('welcome') ?>"> > Masuk </a>
-				</nav>
-				
-			</header>
-
-            <div id="slider" class="sl-slider-wrapper">
-
-				<div class="sl-slider">
-				
-					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-						<div class="sl-slide-inner">
-							<div class="bg-img bg-img-1"></div>
+    <div class="section bg">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-md-7">
+			        <div class="top-header">
+						<div class="pull-left logo">
+							<img src="<?php echo base_url('assets/img/index.png') ?>" width="80">
 						</div>
-					</div>
-					
-					<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
-						<div class="sl-slide-inner">
-							<div class="bg-img bg-img-2"></div>
+						<div class="pull-left text">
+							<h1>Profil Desa Tanimulya</h1>
+							<span>Kabupaten Bandung Barat - Kecamatan Ngamprah</span>
 						</div>
-					</div>
-					
-					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
-						<div class="sl-slide-inner">
-							<div class="bg-img bg-img-3"></div>
-						</div>
-					</div>
-					
-					<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
-						<div class="sl-slide-inner">
-							<div class="bg-img bg-img-4"></div>
-						</div>
-					</div>
-					
-					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
-						<div class="sl-slide-inner">
-							<div class="bg-img bg-img-5"></div>
-						</div>
-					</div>
+						<div class="clearfix"></div>
+			        </div>
+		        </div>
 
-					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
-						<div class="sl-slide-inner">
-							<div class="bg-img bg-img-6"></div>
-						</div>
-					</div>
-
-					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
-						<div class="sl-slide-inner">
-							<div class="bg-img bg-img-7"></div>
-						</div>
-					</div>
-
-					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
-						<div class="sl-slide-inner">
-							<div class="bg-img bg-img-8"></div>
-						</div>
-					</div>
-
-					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
-						<div class="sl-slide-inner">
-							<div class="bg-img bg-img-9"></div>
-						</div>
-					</div>
-
-					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
-						<div class="sl-slide-inner">
-							<div class="bg-img bg-img-10"></div>
-						</div>
-					</div>
-				</div><!-- /sl-slider -->
-
-				<nav id="nav-dots" class="nav-dots">
-					<span class="nav-dot-current"></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-				</nav>
-
-			</div><!-- /slider-wrapper -->
-
+		        <div class="col-md-5">
+		        	<div class="top-badge">
+		        	</div>
+		        </div>
+	        </div>
         </div>
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-		<script type="text/javascript" src="<?php echo base_url() ?>assets/slider/js/jquery.ba-cond.min.js"></script>
-		<script type="text/javascript" src="<?php echo base_url() ?>assets/slider/js/jquery.slitslider.js"></script>
-		<script type="text/javascript">	
-			$(function() {
-			
-				var Page = (function() {
 
-					var $nav = $( '#nav-dots > span' ),
-						slitslider = $( '#slider' ).slitslider( {
-							autoplay: true, 
-    						interval: 5000,
-							onBeforeChange : function( slide, pos ) {
+        <div class="container">
+        	<div class="row">
+        		<div class="col-md-7">
+        			<div class="wrap-slide">
 
-								$nav.removeClass( 'nav-dot-current' );
-								$nav.eq( pos ).addClass( 'nav-dot-current' );
+        			<!-- start slideshow -->
 
-							}
-						} ),
+        			<div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; height: 456px; overflow: hidden; visibility: hidden; background-color: rgba(100,100,100,0.1) ">
+				        <!-- Loading Screen -->
+				        <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
+				            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+				            <div style="position:absolute;display:block;background:url('<?php echo base_url() ?>assets/plugin/jsor/img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+				        </div>
+				        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 356px; overflow: hidden;">
+				            
+				        <?php
+				        if($slide->num_rows()>0):
+				        foreach ($slide->result() as $rows) {
+				        ?>
+				            <div data-p="144.50" style="display: none;">
+				                <img data-u="image" src="<?php echo base_url('uploads/slide/'.$rows->foto) ?>" />
+				                <img data-u="thumb" src="<?php echo base_url('uploads/slide/thumb/'.$rows->foto) ?>" />
+				            </div>
+				        <?php
+				    	}
+				        else:
+				        ?>
+				    		<div data-p="144.50" style="display: none;">
+				                <img data-u="image" src="<?php echo base_url() ?>assets/plugin/jsor/img/01.jpg" />
+				                <img data-u="thumb" src="<?php echo base_url() ?>assets/plugin/jsor/img/thumb-01.jpg" />
+				            </div>
+				        <?php
+				        endif;
+				        ?>
+				        </div>
+				        <!-- Thumbnail Navigator -->
+				        <div data-u="thumbnavigator" class="jssort01" style="position:absolute;left:0px;bottom:0px;width:800px;height:100px;" data-autocenter="1">
+				            <!-- Thumbnail Item Skin Begin -->
+				            <div data-u="slides" style="cursor: default;">
+				                <div data-u="prototype" class="p">
+				                    <div class="w">
+				                        <div data-u="thumbnailtemplate" class="t"></div>
+				                    </div>
+				                    <div class="c"></div>
+				                </div>
+				            </div>
+				            <!-- Thumbnail Item Skin End -->
+				        </div>
+				    </div>
 
-						init = function() {
+        			<!-- end slideshow -->
 
-							initEvents();
-							
-						},
-						initEvents = function() {
 
-							$nav.each( function( i ) {
-							
-								$( this ).on( 'click', function( event ) {
-									
-									var $dot = $( this );
-									
-									if( !slitslider.isActive() ) {
+        			</div>
+        		</div>
 
-										$nav.removeClass( 'nav-dot-current' );
-										$dot.addClass( 'nav-dot-current' );
-									
-									}
-									
-									slitslider.jump( i + 1 );
-									return false;
-								
-								} );
-								
-							} );
+        		<div class="col-md-5">
+        			<div class="bg-pm">
+        				<div id="example_vticker">
+	        				<ul>
+	        				<?php
+					        if($news->num_rows()>0):
+					        foreach ($news->result() as $rowsn) {
+					        ?>
+	        					<li class="vtic-content">
+	        						<h2 class="pm-title"><?php echo $rowsn->judul ?></h2>
+	        						<div class="pm-body"><?php echo $rowsn->deskripsi ?></div>
+	        					</li>
+	        				<?php
+					    	}
+					        else:
+					        ?>
+	        					<li>
+	        						Maaf tidak ada pengumuman..
+	        					</li>
+	        				<?php
+					        endif;
+					        ?>
+	        				</ul>
+        				</div>
 
-						};
+        				<div class="tbl-masuk">
+        				<a href="<?php echo site_url('welcome') ?>" class="btn btn-primary btn-lg">MASUK SISTEM</a>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+    </div>
+		
 
-						return { init : init };
+		<script src="<?php echo base_url() ?>assets/js/jquery.2.1.1.min.js"></script>
+		<script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="<?php echo base_url() ?>assets/plugin/jsor/js/jssor.slider.min.js"></script>
+		<script type="text/javascript" src="<?php echo base_url() ?>assets/plugin/jsor/js_jsor.js"></script>
+		<script src="<?php echo base_url() ?>assets/js/jquery.vticker.min.js"></script>
+		<script>
+	        jssor_1_slider_init();
 
-				})();
-
-				Page.init();
-
-				/**
-				 * Notes: 
-				 * 
-				 * example how to add items:
-				 */
-
-				/*
-				
-				var $items  = $('<div class="sl-slide sl-slide-color-2" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1"><div class="sl-slide-inner bg-1"><div class="sl-deco" data-icon="t"></div><h2>some text</h2><blockquote><p>bla bla</p><cite>Margi Clarke</cite></blockquote></div></div>');
-				
-				// call the plugin's add method
-				ss.add($items);
-
-				*/
-			
+	        $(function() {
+			  $('#example_vticker').vTicker();
 			});
-		</script>
+	    </script>
 	</body>
 </html>

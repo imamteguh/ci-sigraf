@@ -9,7 +9,7 @@
 
 <div class="col-md-4">
 	
-	<form class="form-horizontal" method="post" action="<?php echo site_url('dashboard/editor_peta') ?>">
+	<form class="form-horizontal" method="post" action="<?php echo site_url('dashboard/editor_peta') ?>" enctype="multipart/form-data">
 	<a onclick="hapus_shape()" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Bersihkan Map</a>
 	<button type="submit" class="btn btn-xs btn-success"><i class="fa fa-save"></i> Simpan</button>
 	<div class="space-4"></div>		
@@ -61,6 +61,13 @@
 					</select>
 				</div>
 			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Foto</label>
+
+				<div class="col-sm-9">
+					<input type="file" id="id-input-file-2" class="col-xs-10 col-sm-5" name="fotopt" />
+				</div>
+			</div>
 
 		</div>
 
@@ -85,6 +92,13 @@
 
 				<div class="col-sm-9">
 					<input id="warna" placeholder="Warna Layer" class="form-control" type="text" name="warna">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Foto</label>
+
+				<div class="col-sm-9">
+					<input type="file" id="id-input-file-3" class="col-xs-10 col-sm-5" name="fotoar" />
 				</div>
 			</div>
 
@@ -234,4 +248,23 @@ function load_attr(tipe)
 		$('#area').attr('style', 'display:block');
 	}
 }
+</script>
+<script type="text/javascript">
+	
+jQuery(function($) {
+	$('#id-input-file-2').ace_file_input({
+		no_file:'No File ...',
+		btn_choose:'Choose',
+		btn_change:'Change',
+		droppable:false,
+		onchange:null,
+		thumbnail:true, //| true | large
+		whitelist:'gif|png|jpg|jpeg',
+		blacklist:'exe|php'
+		//onchange:''
+		//
+	});
+	$('#id-input-file-3').ace_file_input();
+})
+
 </script>

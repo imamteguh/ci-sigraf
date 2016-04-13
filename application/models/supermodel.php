@@ -52,7 +52,7 @@ class Supermodel extends CI_Model {
 		return $db;		
 	}
 
-	function thumb_gambar($path=null,$name)
+	function thumb_gambar($path=null, $name, $size=75)
 	{
 		$con['image_library'] = 'gd2';
 		$con['source_image'] = './uploads/'.$path.''.$name;
@@ -60,8 +60,8 @@ class Supermodel extends CI_Model {
 		$con['create_thumb'] = TRUE;
 		$con['thumb_marker'] = '';
 		$con['maintain_ratio'] = TRUE;
-		$con['width'] = 150;
-		$con['height'] = 150;
+		$con['width'] = $size;
+		$con['height'] = $size;
 
 		$this->load->library('image_lib', $con);
 
@@ -69,7 +69,7 @@ class Supermodel extends CI_Model {
 		return true;
 	}
 
-	function unggah_gambar($path=null,$name=null,$rename=null,$thumb=false)
+	function unggah_gambar($path=null,$name=null,$rename=null,$thumb=false, $size=75)
 	{
 		$config['upload_path'] = './uploads/'.$path;
 		$config['allowed_types'] = 'jpg|jpeg|gif|png|pdf';
@@ -82,7 +82,7 @@ class Supermodel extends CI_Model {
 			return false;
 		} else {
 			if($thumb===true) {
-				$this->thumb_gambar($path,$rename);
+				$this->thumb_gambar($path,$rename,$size);
 			}
 			return true;
 		}

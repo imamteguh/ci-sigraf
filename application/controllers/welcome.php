@@ -10,7 +10,9 @@ class Welcome extends CI_Controller {
 
 	function spash()
 	{
-		$this->load->view('spashscreen');
+		$data['slide'] = $this->supermodel->queryManual("SELECT * FROM slide WHERE status=1 ORDER BY id DESC");
+		$data['news'] = $this->supermodel->queryManual("SELECT * FROM pengumuman WHERE status=1 ORDER BY id DESC");
+		$this->load->view('spashscreen', $data);
 	}
 
 	function galeri()
@@ -65,25 +67,6 @@ class Welcome extends CI_Controller {
 		$data['konten'] = 'grafik_agama';
 		$this->load->view('welcome_message', $data);
 	}
-
-	// xml polygon
-	function api_area()
-	{
-		header("Content-type: text/xml");
-		$data = $this->db->get_where('t_layer', array('tipe'=>'polygon'));
-
-		echo '<markers>';
-		foreach ($data->result() as $rows) {
-			# code...
-			echo '<marker ';
-			echo 'coords="'.$rows->kordinat.'" ';
-			echo 'warna="#666000" ';
-			echo '/>';
-		}
-		echo '</markers>';
-	}
-
-	// ajax get chart
 	
 }
 

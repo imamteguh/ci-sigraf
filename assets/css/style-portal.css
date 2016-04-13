@@ -1,0 +1,99 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+body, html {
+	font-family: Lato, sans-serif, arial;
+}
+.claerfix {
+	clear: both;
+}
+
+.bg {
+	background-image: url('../img/bg.jpg');
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 100%;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	position: fixed;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.top-header {
+	padding: 20px 0px 20px 0px;
+}
+
+.top-header h1 {
+	padding: 0px;
+	margin: 0px;
+	font-size: 38px;
+}
+
+.top-header span {
+	font-size: 20px;
+}
+
+.top-header .logo {
+	margin-right: 10px;
+}
+
+/* slider carousel */
+
+
+.wrap-slide {
+	padding: 20px;
+	background-color: rgba(100,100,100,0.5) !important;
+	margin-top: 10px;
+}
+
+/* end */
+
+.top-badge, .bg-pm {
+	padding: 20px;
+	background-color: rgba(255, 30, 0, 0.5);
+}
+
+.top-badge {
+	/*min-height: 115px;*/
+}
+
+.bg-pm:after {
+	content: '';
+	position: absolute;
+	bottom: -70px;
+	left: -5px;
+	border-left: 250px solid transparent;
+	border-right: 250px solid transparent;
+	border-top: 70px solid rgba(255, 30, 0, 0.5);
+}
+
+.bg-pm {
+	min-height: 470px;
+	margin-top: -75px;
+}
+
+.tbl-masuk {
+	padding: 20px 0px;
+	text-align: center;
+}
+.tbl-masuk a {
+	margin: 0px auto;
+}
+
+.vtic-content {
+	min-height: 400px;
+}
+.pm-body {
+	font-weight: 400;
+	font-size: 14px;
+	color: #fff;
+	text-shadow: 1px 1px 2px #000;
+	text-align: justify;
+}
+.pm-title {
+	color: yellow;
+	text-shadow: 1px 1px 2px #000;
+	text-align: center;
+	padding-bottom: 10px;
+	text-transform: uppercase;
+}

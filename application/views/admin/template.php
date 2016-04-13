@@ -50,7 +50,9 @@
 
 		<script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
 
-		
+		<style>
+		#loading_body { display: none; }
+		</style>
 	</head>
 
 	<body class="no-skin">
@@ -68,7 +70,7 @@
 				</button>
 
 				<div class="navbar-header pull-left">
-					<a href="index.html" class="navbar-brand">
+					<a href="#" class="navbar-brand">
 						<small>
 							<i class="fa fa-leaf"></i>
 							Profil Desa Tanimulya
@@ -99,7 +101,7 @@
 								</li>
 
 								<li>
-									<a href="profile.html">
+									<a href="#">
 										<i class="ace-icon fa fa-user"></i>
 										Profile
 									</a>
@@ -171,6 +173,24 @@
 						<b class="arrow"></b>
 					</li>
 
+					<li class="">
+						<a href="<?php echo site_url('slide/index') ?>">
+							<i class="menu-icon fa fa-file"></i>
+							<span class="menu-text"> Slide </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li class="">
+						<a href="<?php echo site_url('pengumuman/index') ?>">
+							<i class="menu-icon fa fa-bullhorn"></i>
+							<span class="menu-text"> Pengumuman </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
 				</ul><!-- /.nav-list -->
 
 				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
@@ -196,12 +216,18 @@
 							</li>
 						</ul><!-- /.breadcrumb -->
 
+						<div class="nav-search">
+							<div id="loading_body">
+								<i class="ace-icon fa fa-spinner fa-spin orange bigger-225"></i>
+							</div>
+						</div><!-- /.nav-search -->
+
 					</div>
 
-					<div class="page-content">
+					<div class="page-content" id="konten_load">
 
 					<?php 
-					$this->load->view($konten);
+					// $this->load->view($konten);
 					?>
 					
 					</div><!-- /.page-content -->
@@ -241,28 +267,25 @@
 		<script src="<?php echo base_url() ?>assets/js/ace-elements.min.js"></script>
 		<script src="<?php echo base_url() ?>assets/js/ace.min.js"></script>
 
-		<!-- page specific plugin scripts -->
-		<script src="<?php echo base_url() ?>assets/js/jquery.dataTables.min.js"></script>
-		<script src="<?php echo base_url() ?>assets/js/jquery.dataTables.bootstrap.min.js"></script>
-		<script src="<?php echo base_url() ?>assets/js/dataTables.tableTools.min.js"></script>
-		<script src="<?php echo base_url() ?>assets/js/dataTables.colVis.min.js"></script>
+		
 
 		<script>
-		jQuery(function($) {
-				$('#examtable').dataTable();
-				$('#id-input-file-2').ace_file_input({
-					no_file:'No File ...',
-					btn_choose:'Choose',
-					btn_change:'Change',
-					droppable:false,
-					onchange:null,
-					thumbnail:true, //| true | large
-					whitelist:'gif|png|jpg|jpeg',
-					blacklist:'exe|php'
-					//onchange:''
-					//
-				});
-		})
+		function load_body()
+		{
+			$("#loading_body").show();
+			$.ajax({
+				url : "<?php echo site_url($link) ?>",
+				data : '',
+				success : function(data) {
+					$("#loading_body").hide();
+					$("#konten_load").html(data);
+				}
+			});
+		}
+
+		window.onload = function() {
+			load_body();
+		}
 		</script>
 	</body>
 </html>
