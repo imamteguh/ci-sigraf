@@ -39,6 +39,7 @@
 */
 
 $route['default_controller'] = "welcome/spash";
+$route['menu/(:any)'] = "menu/index/$1";
 $route['404_override'] = '';
 
 
