@@ -47,14 +47,7 @@
 
 		rwlabels();
 
-		addMarkerKantor();
-		addMarkerSd();
-		addMarkerSmp();
-		addMarkerSma();
-		addMarkerUniv();
-		addMarkerWisata();
-		addMarkerPasar();
-		addMarkerBs();
+		<?php echo getObjPoint() ?>
 
 	    downloadUrl("<?php echo site_url('api_sistem/bg_layer') ?>", function(data) {
 	    var xml = data.responseXML;
@@ -94,6 +87,7 @@
 	    });
 	}
 
+<<<<<<< HEAD
 	function addMarkerKantor()
 	{
     	<?php
@@ -339,6 +333,9 @@
 		}
 		?>
 	}
+=======
+	<?php echo getPoint() ?>
+>>>>>>> 56796bea9e6f0d423c69f31185f2eeed0acddea8
 
 	function hoverMaps(bermudaTriangle)
 	{
@@ -388,14 +385,7 @@
     function filterpoint() {
     	$("input[name='ceklist']").change(function() {
     		clearMarkers();
-	    	if(inputElements[0].checked) {addMarkerKantor();}
-			if(inputElements[1].checked) {addMarkerSd();}
-			if(inputElements[2].checked) {addMarkerSmp();}
-			if(inputElements[3].checked) {addMarkerSma();}
-			if(inputElements[4].checked) {addMarkerUniv();}
-			if(inputElements[5].checked) {addMarkerWisata();}
-			if(inputElements[6].checked) {addMarkerPasar();}
-			if(inputElements[7].checked) {addMarkerBs();}
+    		<?php echo getFuncPoint() ?>
 		});
     }
 

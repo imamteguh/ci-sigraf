@@ -131,6 +131,37 @@
 						<b class="arrow"></b>
 					</li>
 
+					<li class=""> <!-- Start Profil -->
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-bars"></i>
+							<span class="menu-text"> Profil </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="<?php echo site_url('menu/visi-misi') ?>">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<span class="menu-text"> Visi Misi </span>
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="<?php echo site_url('menu/struktur-organisasi') ?>">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<span class="menu-text"> Struktur Organisasi </span>
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+
+					</li> <!-- End Profil -->
+
 					<li class="">
 						<a href="<?php echo site_url('login/index') ?>">
 							<i class="menu-icon fa fa-sign-in"></i>

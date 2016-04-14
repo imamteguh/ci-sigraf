@@ -36,6 +36,9 @@ body, html {
 .top-header .logo {
 	margin-right: 10px;
 }
+.top-header .text {
+	text-shadow: 1px 1px 1px #fff;
+}
 
 /* slider carousel */
 

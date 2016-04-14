@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2016 at 10:37 AM
+-- Generation Time: Apr 14, 2016 at 12:29 PM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -204,7 +204,7 @@ CREATE TABLE IF NOT EXISTS `map_kategori` (
   `nm_kategori` varchar(30) NOT NULL,
   `icon` varchar(30) NOT NULL,
   PRIMARY KEY (`id_kategori`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `map_kategori`
@@ -218,7 +218,11 @@ INSERT INTO `map_kategori` (`id_kategori`, `nm_kategori`, `icon`) VALUES
 (5, 'Universitas', 'universitas.png'),
 (6, 'Tempat Wisata', 'wisata.png'),
 (7, 'Pasar', 'pasar.png'),
-(8, 'Bank Sampah', 'bs.png');
+(8, 'Bank Sampah', 'bs.png'),
+(9, 'TK', 'tk.png'),
+(10, 'Paud', 'paud.png'),
+(11, 'MCK', 'toilet.png'),
+(12, 'Usaha Home Industri', 'usaha.png');
 
 -- --------------------------------------------------------
 
@@ -234,6 +238,7 @@ CREATE TABLE IF NOT EXISTS `map_layer` (
   `status` int(1) NOT NULL,
   `warna` varchar(7) NOT NULL,
   `foto` varchar(40) NOT NULL,
+  `nama_rw` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=30 ;
 
@@ -241,32 +246,32 @@ CREATE TABLE IF NOT EXISTS `map_layer` (
 -- Dumping data for table `map_layer`
 --
 
-INSERT INTO `map_layer` (`id`, `koordinat`, `judul`, `link`, `status`, `warna`, `foto`) VALUES
-(2, 'vu{h@icfoSYYa@]iB_C^]aBmBc@e@oCvBoC~BgB`BOR{AR@j@|@dC|@hAJ^`BUXONAJXlA_@hCKLs@hAgALKbAk@b@U', 'RW 13', '13', 0, '#808000', ''),
-(3, 'f}{h@sogoSoBZs@jHFhC_@FgFkC{AjIxAZxDvA|HEdB@Be@b@_BGwBF}CaEeI', 'RW 05', '5', 0, '#000099', ''),
-(4, '~b|h@gwfoSqBAsHBaDkASK{A[Qh@cB`CSn@JZ~BjChCtCa@\\dBzB`Az@dDgC`@[l@s@l@aBnAoEj@aB', 'RW 12', '12', 0, '#cc00cc', ''),
-(5, 't}zh@sbfoSm@G[VWW@m@[WQeALu@c@}@HaAOeA_@YjCqAt@Fl@uDtEp@pBoOb@w@zDfB{AlIOj@cB`CWx@FThChCkDjCiDxCmAlA', 'RW 14', '14', 0, '#0066ff', ''),
-(6, 'ty{h@wngoSU@qA_AoAJaHaAyGkAUz@Hd@BnAh@FLVb@vApDxA~DlB`FfCd@AIqC', 'RW 04', '4', 0, '#004d00', ''),
-(7, 'jwzh@{ofoSa@Ce@_@Mc@_@S_@aAhAiBx@uElAmA\\oFJ_@`AO^}HPs@xB`@U|@JV@`Bh@DTZXlArDzAa@v@uBzOoE_Ao@vDw@K', 'RW 06', '6', 0, '#000066', ''),
-(8, 'rrzh@ytfoSuAyD]u@[_@[u@UeBe@y@iAs@X[RmA^qAHUKe@fADvAGd@?`@l@Ff@`BEtC\\Yp@S`FoApAs@tE', 'RW 24', '24', 0, '#808000', ''),
-(9, 'vf{h@msgoSdAkGh@oDp@cEZJd@JnBLRHXALQr@J|AXMxASbC`A^e@rBVP]|@Ab@Pj@z@Vt@f@`@ENRChAHLuBZSAsA_AoANsFy@', 'RW 03', '3', 0, '#1a1a00', ''),
-(10, 'tf{h@osgoS{FeASCC_@AgAj@uDQGAK\\gD_B_AE]Bk@Zw@f@y@NQhAaALN\\HnBXrEv@g@fCwAfJcAdG', 'RW 15', '15', 0, '#992600', ''),
-(11, 'd~zh@}ugoSoCk@qEk@y@OsB?Gy@PmC{AcEYs@CWX}@h@cAhA\\PTz@vBtCoAHET?xBt@z@\\HD|Az@]fD@JRFe@nCGd@@pA', 'RW 07', '7', 0, '#003333', ''),
-(13, 'zw{h@kehoSwCg@KNYDMIuBK}@[d@gC_J{AMOEMtAeBz@cAeAo@qA{@oAi@aBy@Eq@w@i@ESb@_A`@k@^?`AkA`AeAbBwCbB~@NFd@`@|@v@tAf@PDn@\\t@fA?j@Xn@bAtATpANd@?~CLXf@`@Lp@j@fAVf@BZOtA', 'RW 02', '2', 0, '#000066', ''),
-(15, 'pmzh@ushoSV_ALKRCXc@l@oARe@r@Zr@ZbFnCCHCTn@d@ApAd@b@`@^a@`@[b@OXw@e@oAa@Sg@m@QaCeAgAg@u@Wo@M', 'RW 19', '19', 0, '#003300', ''),
-(16, 'drzh@_{hoSSK?MNUPQ`@eAXo@t@kAhA{@BAJMj@cAPHv@b@j@ZXPcAnA_@?cAjBBRv@h@Dr@~Av@x@\\ZNv@f@xA~@y@bAq@z@c@h@BLo@f@eAcA?qAo@e@BUDKsAs@cB}@sCsA', 'RW 16', '16', 0, '#99004d', ''),
-(18, '|ezh@mihoSd@kAX_AW]lAsDDMxBb@NFd@H`A\\rAn@~Ar@v@TRf@fA^HBj@\\JDMRSj@Cj@D\\oAg@kBo@Y?uB~@g@Tu@mBU_@iA]_@p@MRYz@iBg@', 'RW 18', '18', 0, '#660000', ''),
-(19, 'xizh@ythoS\\}@R{@?[EUr@sBh@_BPc@d@yAf@aBp@oBn@Rn@T\\LnAd@d@Vi@`AMNw@l@UPo@bA]v@]x@EHQPMT?NTH]x@c@z@Yb@WBKJU~@', 'RW 22', '22', 0, '#cc00cc', ''),
-(20, 'z~zh@wdioSoC{Ag@WkE}AjAyDJTzEtBjDUfAz@mArBUb@w@x@', 'RW 17', '17', 0, '#992600', ''),
-(21, '|hzh@qegoSs@Q{@eCeAuBKyANw@Ok@qBuAG[T{@b@_Aj@WqEs@GiAJyBLmCC]lAa@dC@hB\\d@HzA`@DZt@lB~@`CQnCDz@xB@fC^jC\\dCf@Qv@MlBOvCCv@}@L?GwC]_BHGq@_@g@uBFwAEJ`@@L[`AOn@Oz@', 'RW 08', '8', 0, '#1a1a00', ''),
-(22, 'r{yh@s}goSeCe@cBa@mBe@yEcAzAuEp@Y\\mAZoBxCdA~Bf@l@Fl@X@R?fAB\\SlEG~@', 'RW 09', '9', 0, '#808000', ''),
-(23, '`|yh@gihoS?yAb@yA^sCLwA@wANMj@YlFdBjA`@_@bAeA`DV^W|@Yt@MX_AOc@KaCAK@cA^', 'RW 20', '20', 0, '#ff6600', ''),
-(24, 'r~yh@ayhoSFYp@w@BaABOSmEbAA\\PnARf@HJJhCv@hATuAbEDP@^U~@KTgFcBqAc@', 'RW 21', '21', 0, '#004d4d', ''),
-(25, 'hpyh@sphoS`@kCF_@DWZk@`@u@b@k@KS?W`@s@jA}@q@{CsA{AYGTy@`@Sr@sAbAC`@CVAPHPCJLn@pAj@tA^l@Lp@JvBFrACTE~@q@t@EX?vAQnBQzAMl@a@lAk@_@i@AeAQeAYkBu@', 'RW 10', '10', 0, '#99004d', ''),
-(26, 'tpzh@{fioSy@a@cCUc@McBo@GWaBe@m@{@gBkAg@OQTi@hBJHf@bAb@bAN`@`@n@Jn@fACVRrARd@HJNhAVz@ZlAR\\w@\\gA', 'RW 23', '23', 0, '#992600', ''),
-(27, 'tpzh@yfioSy@c@_CUkC}@GWaBg@k@w@eBkAk@Qt@mCp@Of@HjB|@bE|AJ`@zD`Cf@PIJ', 'RW 25', '25', 0, '#4d0099', ''),
-(28, 'vrzh@ikioSe@O{@k@aCwAKc@wAi@aC}@uAs@e@Gu@NyAmBaAWEo@AYOKqAc@Oq@g@Mq@W[DSAOKKQYc@QMYu@DkDo@qBtBEdBj@n@RPh@rCvAHAf@_Aj@Vv@\\jB|@`CJpDz@|Bl@v@~Af@~@FhAe@`CE^Dh@BNb@j@TVLZWz@Uv@', 'RW 01', '1', 0, '#001a00', ''),
-(29, '|ryh@chioSSCk@Kq@GOC}@Ac@Za@dAIXe@PgA[a@CiAI_AGa@P}@y@o@m@o@e@TcA^_BViAj@aAPWFqBBu@@EFy@B]HgAD_@TwALw@Jo@j@cAXk@dAgBt@[F?x@DJ?h@AZCL^`@lAAbAChBXt@PNd@r@NJR@ZEp@Vf@LNp@jA`@F@LJFhAp@PNDRVj@t@Z^M`@YdAMd@QTQj@Wz@QBQIeADw@BU`@Wf@EHa@RQl@', 'RW 11', '11', 0, '#000066', '');
+INSERT INTO `map_layer` (`id`, `koordinat`, `judul`, `link`, `status`, `warna`, `foto`, `nama_rw`) VALUES
+(2, 'vu{h@icfoSYYa@]iB_C^]aBmBc@e@oCvBoC~BgB`BOR{AR@j@|@dC|@hAJ^`BUXONAJXlA_@hCKLs@hAgALKbAk@b@U', 'RW 13', '13', 0, '#808000', 'RW13 AHMAD TOHA.jpg', 'AHMAD TOHA'),
+(3, 'f}{h@sogoSoBZs@jHFhC_@FgFkC{AjIxAZxDvA|HEdB@Be@b@_BGwBF}CaEeI', 'RW 05', '5', 0, '#000099', 'RW05 AHMAD YANI.jpg', 'AHMAD YANI'),
+(4, '~b|h@gwfoSqBAsHBaDkASK{A[Qh@cB`CSn@JZ~BjChCtCa@\\dBzB`Az@dDgC`@[l@s@l@aBnAoEj@aB', 'RW 12', '12', 0, '#cc00cc', 'RW12 E EKOSARI.jpg', 'E EKOSARI'),
+(5, 't}zh@sbfoSm@G[VWW@m@[WQeALu@c@}@HaAOeA_@YjCqAt@Fl@uDtEp@pBoOb@w@zDfB{AlIOj@cB`CWx@FThChCkDjCiDxCmAlA', 'RW 14', '14', 0, '#0066ff', 'RW14 ZAKI SANTOSO.jpg', 'ZAKI SANTOSO'),
+(6, 'ty{h@wngoSU@qA_AoAJaHaAyGkAUz@Hd@BnAh@FLVb@vApDxA~DlB`FfCd@AIqC', 'RW 04', '4', 0, '#004d00', 'RW04 JAJANG KOMARA.jpg', 'JAJANG KOMARA'),
+(7, 'jwzh@{ofoSa@Ce@_@Mc@_@S_@aAhAiBx@uElAmA\\oFJ_@`AO^}HPs@xB`@U|@JV@`Bh@DTZXlArDzAa@v@uBzOoE_Ao@vDw@K', 'RW 06', '6', 0, '#000066', 'RW06 UUS USAMA.jpg', 'UUS USAMA'),
+(8, 'rrzh@ytfoSuAyD]u@[_@[u@UeBe@y@iAs@X[RmA^qAHUKe@fADvAGd@?`@l@Ff@`BEtC\\Yp@S`FoApAs@tE', 'RW 24', '24', 0, '#808000', 'RW24 CECEP TISNA.jpg', 'CECEP TISNA'),
+(9, 'vf{h@msgoSdAkGh@oDp@cEZJd@JnBLRHXALQr@J|AXMxASbC`A^e@rBVP]|@Ab@Pj@z@Vt@f@`@ENRChAHLuBZSAsA_AoANsFy@', 'RW 03', '3', 0, '#1a1a00', 'RW03 ADE SUNARYA.jpg', 'ADE SUNARYA'),
+(10, 'tf{h@osgoS{FeASCC_@AgAj@uDQGAK\\gD_B_AE]Bk@Zw@f@y@NQhAaALN\\HnBXrEv@g@fCwAfJcAdG', 'RW 15', '15', 0, '#992600', 'RW15 RIZKIANSYAH.jpg', 'RIZKIANSYAH'),
+(11, 'd~zh@}ugoSoCk@qEk@y@OsB?Gy@PmC{AcEYs@CWX}@h@cAhA\\PTz@vBtCoAHET?xBt@z@\\HD|Az@]fD@JRFe@nCGd@@pA', 'RW 07', '7', 0, '#003333', 'RW07 ASEP RODIMAN.jpg', 'ASEP RODIMAN'),
+(13, 'zw{h@kehoSwCg@KNYDMIuBK}@[d@gC_J{AMOEMtAeBz@cAeAo@qA{@oAi@aBy@Eq@w@i@ESb@_A`@k@^?`AkA`AeAbBwCbB~@NFd@`@|@v@tAf@PDn@\\t@fA?j@Xn@bAtATpANd@?~CLXf@`@Lp@j@fAVf@BZOtA', 'RW 02', '2', 0, '#000066', 'RW02 CECEP ARIFIN.jpg', 'CECEP ARIFIN'),
+(15, 'pmzh@ushoSV_ALKRCXc@l@oARe@r@Zr@ZbFnCCHCTn@d@ApAd@b@`@^a@`@[b@OXw@e@oAa@Sg@m@QaCeAgAg@u@Wo@M', 'RW 19', '19', 0, '#003300', 'RW19 WINARSO', 'WINARSO'),
+(16, 'drzh@_{hoSSK?MNUPQ`@eAXo@t@kAhA{@BAJMj@cAPHv@b@j@ZXPcAnA_@?cAjBBRv@h@Dr@~Av@x@\\ZNv@f@xA~@y@bAq@z@c@h@BLo@f@eAcA?qAo@e@BUDKsAs@cB}@sCsA', 'RW 16', '16', 0, '#99004d', 'RW16 ROCHMAN.jpg', 'ROCHMAN'),
+(18, '|ezh@mihoSd@kAX_AW]lAsDDMxBb@NFd@H`A\\rAn@~Ar@v@TRf@fA^HBj@\\JDMRSj@Cj@D\\oAg@kBo@Y?uB~@g@Tu@mBU_@iA]_@p@MRYz@iBg@', 'RW 18', '18', 0, '#660000', 'RW18 SIGIT PRAMONO.jpg', 'SIGIT PRAMONO'),
+(19, 'xizh@ythoS\\}@R{@?[EUr@sBh@_BPc@d@yAf@aBp@oBn@Rn@T\\LnAd@d@Vi@`AMNw@l@UPo@bA]v@]x@EHQPMT?NTH]x@c@z@Yb@WBKJU~@', 'RW 22', '22', 0, '#cc00cc', 'RW22 MUHAMAD SATORI.jpg', 'MUHAMAD SATORI'),
+(20, 'z~zh@wdioSoC{Ag@WkE}AjAyDJTzEtBjDUfAz@mArBUb@w@x@', 'RW 17', '17', 0, '#992600', 'RW17 YUNUS.jpg', 'YUNUS'),
+(21, '|hzh@qegoSs@Q{@eCeAuBKyANw@Ok@qBuAG[T{@b@_Aj@WqEs@GiAJyBLmCC]lAa@dC@hB\\d@HzA`@DZt@lB~@`CQnCDz@xB@fC^jC\\dCf@Qv@MlBOvCCv@}@L?GwC]_BHGq@_@g@uBFwAEJ`@@L[`AOn@Oz@', 'RW 08', '8', 0, '#1a1a00', 'RW08 UAS SUTARI.jpg', 'UAS SUTARI'),
+(22, 'r{yh@s}goSeCe@cBa@mBe@yEcAzAuEp@Y\\mAZoBxCdA~Bf@l@Fl@X@R?fAB\\SlEG~@', 'RW 09', '9', 0, '#808000', 'RW09 FARID MULYANA.jpg', 'FARID MULYANA'),
+(23, '`|yh@gihoS?yAb@yA^sCLwA@wANMj@YlFdBjA`@_@bAeA`DV^W|@Yt@MX_AOc@KaCAK@cA^', 'RW 20', '20', 0, '#ff6600', 'RW20 MOEDJIONO.jpg', 'MOEDJIONO'),
+(24, 'r~yh@ayhoSFYp@w@BaABOSmEbAA\\PnARf@HJJhCv@hATuAbEDP@^U~@KTgFcBqAc@', 'RW 21', '21', 0, '#004d4d', 'RW21 AHMAD SUPARTO.jpg', 'AHMAD SUPARTO'),
+(25, 'hpyh@sphoS`@kCF_@DWZk@`@u@b@k@KS?W`@s@jA}@q@{CsA{AYGTy@`@Sr@sAbAC`@CVAPHPCJLn@pAj@tA^l@Lp@JvBFrACTE~@q@t@EX?vAQnBQzAMl@a@lAk@_@i@AeAQeAYkBu@', 'RW 10', '10', 0, '#99004d', 'RW10 DEDI SAEFUDIN.jpg', 'DEDI SAEFUDIN'),
+(26, 'tpzh@{fioSy@a@cCUc@McBo@GWaBe@m@{@gBkAg@OQTi@hBJHf@bAb@bAN`@`@n@Jn@fACVRrARd@HJNhAVz@ZlAR\\w@\\gA', 'RW 23', '23', 0, '#992600', 'RW23 FREDDYCUS FREDDY.jpg', 'FREDDYCUS FREDDY'),
+(27, 'tpzh@yfioSy@c@_CUkC}@GWaBg@k@w@eBkAk@Qt@mCp@Of@HjB|@bE|AJ`@zD`Cf@PIJ', 'RW 25', '25', 0, '#4d0099', 'RW25 AOS FIRDAOS.jpg', 'AOS FIRDAOS'),
+(28, 'vrzh@ikioSe@O{@k@aCwAKc@wAi@aC}@uAs@e@Gu@NyAmBaAWEo@AYOKqAc@Oq@g@Mq@W[DSAOKKQYc@QMYu@DkDo@qBtBEdBj@n@RPh@rCvAHAf@_Aj@Vv@\\jB|@`CJpDz@|Bl@v@~Af@~@FhAe@`CE^Dh@BNb@j@TVLZWz@Uv@', 'RW 01', '1', 0, '#001a00', 'RW01 ROHENDAR.jpg', 'ROHENDAR'),
+(29, '|ryh@chioSSCk@Kq@GOC}@Ac@Za@dAIXe@PgA[a@CiAI_AGa@P}@y@o@m@o@e@TcA^_BViAj@aAPWFqBBu@@EFy@B]HgAD_@TwALw@Jo@j@cAXk@dAgBt@[F?x@DJ?h@AZCL^`@lAAbAChBXt@PNd@r@NJR@ZEp@Vf@LNp@jA`@F@LJFhAp@PNDRVj@t@Z^M`@YdAMd@QTQj@Wz@QBQIeADw@BU`@Wf@EHa@RQl@', 'RW 11', '11', 0, '#000066', 'RW11 ABDILLAH.jpg', 'ABDILLAH');
 
 -- --------------------------------------------------------
 
@@ -289,25 +294,48 @@ CREATE TABLE IF NOT EXISTS `map_point` (
 --
 
 INSERT INTO `map_point` (`id`, `koordinat`, `nama`, `alamat`, `id_kategori`, `foto`) VALUES
-(1, '(-6.859653931155633, 107.53147602081299)', 'KANTOR DESA TANIMULYA', 'Jl. Sowadinata', 1, ''),
-(2, '(-6.858066775183875, 107.53427624702454)', 'SMP NEGERI 2 NGAMPRAH', 'JL. SOWADINATA', 3, ''),
-(3, '(-6.859350348039887, 107.53092885017395)', 'SDN PAKUSARAKAN', 'JL. SOWADINATA', 2, ''),
-(4, '(-6.859275783736243, 107.53082692623138)', 'SDN MARGAMULYA', 'JL. SOWADINATA', 2, ''),
-(5, '(-6.854322557429137, 107.53380417823792)', 'KOLAM RENANG DELTA VALEY', 'JL. DIRAWINATA', 6, ''),
-(6, '(-6.854146796840128, 107.53268301486969)', 'SDN CILEDUG 01', 'JL. DIRAWINATA', 2, ''),
-(7, '(-6.860484789219771, 107.52539277076721)', 'KOLAM RENANG TIRTA MULYA', 'JL SOMAWANATA', 6, ''),
-(8, '(-6.856703308113141, 107.52478122711182)', 'PASAR DESA TANIMULYA', 'JL. H GOFUR. RW GIRANG', 7, ''),
-(9, '(-6.857837755596999, 107.5240409374237)', 'SD AS SAKINAH', 'RAWA POJOK', 2, ''),
-(10, '(-6.857736560860753, 107.52386927604675)', 'SMP AS SAKINAH', 'RAWA POJOK', 3, ''),
-(11, '(-6.857843081635158, 107.52411603927612)', 'SMA AS SAKINAH', 'RAWA POJOK', 4, ''),
-(12, '(-6.858649975727684, 107.52344012260437)', 'SMP FITRAH INSANI', 'JL. H. GOFUR', 3, ''),
-(13, '(-6.860977444759111, 107.52394169569016)', 'SD FITRAH INSANI', 'JL. H. GOFUR', 2, ''),
-(14, '(-6.860575331357123, 107.52098321914673)', 'SDN KARYAMULYA', 'JL. GIOK 4', 2, ''),
-(15, '(-6.861661835662495, 107.52085447311401)', 'SDN SIRNAGALIH', 'JL. PERMATA RAYA', 2, ''),
+(1, '(-6.859653931155633, 107.53147602081299)', 'KANTOR DESA TANIMULYA', 'Jl. Sowadinata', 1, 'xxx.jpg'),
+(2, '(-6.858066775183875, 107.53427624702454)', 'SMP NEGERI 2 NGAMPRAH', 'JL. SOWADINATA', 3, 'SMPN_2.jpg'),
+(3, '(-6.859350348039887, 107.53092885017395)', 'SDN PAKUSARAKAN', 'JL. SOWADINATA', 2, 'sdn_pakusarakan.jpg'),
+(4, '(-6.859275783736243, 107.53082692623138)', 'SDN MARGAMULYA', 'JL. SOWADINATA', 2, 'sdn_margamulya.jpg'),
+(5, '(-6.854322557429137, 107.53380417823792)', 'KOLAM RENANG DELTA VALEY', 'JL. DIRAWINATA', 6, 'DELTA_VALEY.jpg'),
+(6, '(-6.854146796840128, 107.53268301486969)', 'SDN CILEDUG 01', 'JL. DIRAWINATA', 2, 'sdn1cileduk.jpg'),
+(7, '(-6.860484789219771, 107.52539277076721)', 'KOLAM RENANG TIRTA MULYA', 'JL SOMAWANATA', 6, 'tirta_mulya.jpg'),
+(8, '(-6.856703308113141, 107.52478122711182)', 'PASAR DESA TANIMULYA', 'JL. H GOFUR. RW GIRANG', 7, 'pasar_desa_tanimulya.jpg'),
+(9, '(-6.857837755596999, 107.5240409374237)', 'SD AS SAKINAH', 'RAWA POJOK', 2, 'assakinah.jpg'),
+(10, '(-6.857736560860753, 107.52386927604675)', 'SMP AS SAKINAH', 'RAWA POJOK', 3, 'assakinah.jpg'),
+(11, '(-6.857843081635158, 107.52411603927612)', 'SMA AS SAKINAH', 'RAWA POJOK', 4, 'assakinah.jpg'),
+(12, '(-6.858649975727684, 107.52344012260437)', 'SMP FITRAH INSANI', 'JL. H. GOFUR', 3, 'fitrah_insani.jpg'),
+(13, '(-6.860977444759111, 107.52394169569016)', 'SD FITRAH INSANI', 'JL. H. GOFUR', 2, 'fitrah_insani.jpg'),
+(14, '(-6.860575331357123, 107.52098321914673)', 'SDN KARYAMULYA', 'JL. GIOK 4', 2, 'sdn_karyamulya.jpg'),
+(15, '(-6.861661835662495, 107.52085447311401)', 'SDN SIRNAGALIH', 'JL. PERMATA RAYA', 2, 'sdn_sirnagalih.jpg'),
 (16, '(-6.86311316720251, 107.52349108457565)', 'SDN CILEDUG 02', 'JL. H. GOFUR', 2, ''),
-(17, '(-6.858109383466957, 107.53031730651855)', 'SD NIAGARA', 'JL. PURI KENANGAN RAYA', 2, ''),
-(18, '(-6.858580737344317, 107.52970039844513)', 'BANK SAMPAH RW 22', 'JL. SOWADINATA', 8, ''),
+(17, '(-6.858109383466957, 107.53031730651855)', 'SD NIAGARA', 'JL. PURI KENANGAN RAYA', 2, 'sd_niagara.jpg'),
+(18, '(-6.858580737344317, 107.52970039844513)', 'BANK SAMPAH RW 22', 'JL. SOWADINATA', 8, 'bank_sampah_rw22.jpg'),
 (19, '(-6.853571579913911, 107.53357887268066)', 'BANK SAMPAH RW 11', 'JL. DIRAWINATA', 8, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `menu`
+--
+
+CREATE TABLE IF NOT EXISTS `menu` (
+  `id` int(2) NOT NULL AUTO_INCREMENT,
+  `menu_text` varchar(25) NOT NULL,
+  `slug` varchar(25) NOT NULL,
+  `parent` int(2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `menu`
+--
+
+INSERT INTO `menu` (`id`, `menu_text`, `slug`, `parent`) VALUES
+(1, 'Profil', 'profil', 0),
+(2, 'Visi Misi', 'visi-misi', 1),
+(3, 'Struktur Organisasi', 'struktur-organisasi', 1);
 
 -- --------------------------------------------------------
 
@@ -332,6 +360,28 @@ INSERT INTO `pengumuman` (`id`, `judul`, `deskripsi`, `tanggal`, `status`) VALUE
 (1, 'KARTU TANDA PENDUDUK (KTP)', '<p>1. Penerbitan KTP baru bagi penduduk WNI,dilakukan setelah memenuhi syarat berupa :<br />\r\na.&nbsp; Telah berusia 17 (tujuh belas) tahun atau sudah kawin atau pernah kawin<br />\r\nb.&nbsp; Surat pengantar RT/RW dan Kepala desa/lurah<br />\r\nc.&nbsp; Poto copy Kartu Keluarga<br />\r\nd.&nbsp; Kutipan Akta Nikah/Akta Kawin bagi Penduduk yang belum berusia 17 tahun<br />\r\ne.&nbsp; Kutipan Akta Kelahiran<br />\r\nf.&nbsp; Surat keterangan datang dari luar negeri yang diterbitkan oleh Instansi pelaksana bagi WNI yang datang dari luar&nbsp; negeri Karena&nbsp; pindah</p>\r\n', '2016-04-13', 1),
 (2, 'Biodata Penduduk', '<p>1. Penduduk WNI wajib melaporan Kepada Instansi Pelaksana melalui Lurah dan Camat untuk dicatatkan Biodatanya<br />\r\n2. Pencatatan Biodata Penduduk WNI dilakukan setelah memenuhi syarat :<br />\r\na)&nbsp;&nbsp; Surat Pengantar dari RT dan RW<br />\r\nb)&nbsp;&nbsp; Kutipan Akta Kelahiran<br />\r\nc)&nbsp;&nbsp; Ijazah atau Surat Tanda Tamat Belajar<br />\r\nd)&nbsp;&nbsp; Kartu Keluarga<br />\r\ne)&nbsp;&nbsp; Kartu Tanda Penduduk<br />\r\nf)&nbsp;&nbsp;&nbsp; Kutipan Akta Perkawinan/Kutipan Akta Nikah atau<br />\r\ng)&nbsp;&nbsp; Kutipan Akta Perceraian</p>\r\n', '2016-04-13', 1),
 (3, 'Kartu Keluarga', '<p>1. Penduduk WNI wajib melaporkan susunan Keluarganya kepada Instansi pelaksana melalui Lurah dan Camat<br />\r\n2. Penerbitan KK dilakukan setelah memenuhi syarat :<br />\r\na.&nbsp; Surat Pengantar RT dan RW<br />\r\nb.&nbsp; Ijin tinggal tetap bagi orang asing<br />\r\nc.&nbsp; Foto copi Kutipan Akta Nikah/Kutipan Akta Perkawinan<br />\r\nd.&nbsp; Surat Keterangan Pindah/Surat Keterangan Pindah Datang dalam wilayah NKRI<br />\r\ne.&nbsp; Surat Keterangan datang dari Luar Negeri bagi WNI yang datang dari luar negeri karena pindah<br />\r\nf. Kartu Keluarga (KK) lama karena penambahan/pengurangan anggota Keluarga</p>\r\n', '2016-04-13', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post`
+--
+
+CREATE TABLE IF NOT EXISTS `post` (
+  `id` int(2) NOT NULL,
+  `judul` varchar(50) NOT NULL,
+  `deskripsi` text NOT NULL,
+  `tanggal` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `post`
+--
+
+INSERT INTO `post` (`id`, `judul`, `deskripsi`, `tanggal`) VALUES
+(2, 'Visi Misi Desa Tanimulya', '...', '2016-04-14'),
+(3, 'Struktur Organisasi Desa Tanimulya', '<p>...</p>\r\n', '2016-04-14');
 
 -- --------------------------------------------------------
 
