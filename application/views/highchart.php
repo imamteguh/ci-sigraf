@@ -1,5 +1,16 @@
 <script src="http://code.highcharts.com/highcharts.js"></script>
-<div id="grafikrt" style="height:250px;min-width:100px;"></div>
+<div style="float: right; width: 18%;">
+    <?php
+    if ($photo!='') {
+        echo "<p style='font-size:12px;padding:0;text-align:center'>KETUA RW ".$judul."</p>";
+        echo '<img src="'.base_url("uploads/peta/".$photo).'" width="100%">';
+        echo "<p style='font-size:12px;padding:0;text-align:center'>".$nama_rw."</p>";
+    }
+    ?>
+</div>
+<div style="float: left; width: 75%">
+    <div id="grafikrt" style="height:250px;min-width:100px;"></div>
+</div>
 <script>
 var chartrt = new Highcharts.Chart({
     chart: {
