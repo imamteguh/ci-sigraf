@@ -64,13 +64,15 @@
 	        var encodedPath = markers[i].getAttribute("coords");
 	        var warna = markers[i].getAttribute("warna");
 	        var link = markers[i].getAttribute("link");
+	        var photos = markers[i].getAttribute("foto");
+	        var nama_rw = markers[i].getAttribute("nama_rw");
 
 	        var decodedPolygon = google.maps.geometry.encoding.decodePath(encodedPath);
 	        for (var j = 0; j < decodedPolygon.length; j++) {
 	          bounds.extend(decodedPolygon[j]);
 	        }
 
-	        var html = "<?php echo site_url('api_sistem/get_chart') ?>?id_rw=" + link;
+	        var html = "<?php echo site_url('api_sistem/get_chart') ?>?id_rw=" + link +"&foto=" + photos +"&nama_rw=" + nama_rw;
 	        // Construct the polygon.
 	        var bermudaTriangle = new google.maps.Polygon({
 	            paths: decodedPolygon,
@@ -98,7 +100,21 @@
     	foreach($kantor->result() as $p) {
     	?>
     	var image = '<?php echo base_url("assets/img/".$p->icon) ?>';
-    	var html = '<p style="text-align:center"><?php echo $p->nama ?><br>Alamat : <?php echo $p->alamat ?></p>';
+
+    	<?php
+    	$imgfoto ='';
+    	if($p->foto!='') {
+    		$imgfoto = '<img src="'.base_url("uploads/peta/".$p->foto).'" height="120">';
+    	}
+    	?>
+
+    	var html = '<div style="min-width:300px;">' +
+    	 			'<h4 style="border-bottom:1px solid #000; font-size:14px; font-weight: 400; padding: 10px 0px;"> ' + 
+    	 			'<?php echo $p->nama ?></h4> ' + 
+    	 			'<p>Alamat : <?php echo $p->alamat ?></p>' + 
+    	 			'<?php echo $imgfoto ?>' +
+    	 			'<div>';
+
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng<?php echo $p->koordinat ?>,
 			map: maphy,
@@ -116,7 +132,20 @@
     	foreach($sd->result() as $p) {
     	?>
     	var image = '<?php echo base_url("assets/img/".$p->icon) ?>';
-    	var html = '<p style="text-align:center"><?php echo $p->nama ?><br>Alamat : <?php echo $p->alamat ?></p>';
+    	<?php
+    	$imgfoto ='';
+    	if($p->foto!='') {
+    		$imgfoto = '<img src="'.base_url("uploads/peta/".$p->foto).'" height="120">';
+    	}
+    	?>
+
+    	var html = '<div style="min-width:300px;">' +
+    	 			'<h4 style="border-bottom:1px solid #000; font-size:14px; font-weight: 400; padding: 10px 0px;"> ' + 
+    	 			'<?php echo $p->nama ?></h4> ' + 
+    	 			'<p>Alamat : <?php echo $p->alamat ?></p>' + 
+    	 			'<?php echo $imgfoto ?>' +
+    	 			'<div>';
+
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng<?php echo $p->koordinat ?>,
 			map: maphy,
@@ -134,7 +163,21 @@
     	foreach($smp->result() as $p) {
     	?>
     	var image = '<?php echo base_url("assets/img/".$p->icon) ?>';
-    	var html = '<p style="text-align:center"><?php echo $p->nama ?><br>Alamat : <?php echo $p->alamat ?></p>';
+    	
+    	<?php
+    	$imgfoto ='';
+    	if($p->foto!='') {
+    		$imgfoto = '<img src="'.base_url("uploads/peta/".$p->foto).'" height="120">';
+    	}
+    	?>
+
+    	var html = '<div style="min-width:300px;">' +
+    	 			'<h4 style="border-bottom:1px solid #000; font-size:14px; font-weight: 400; padding: 10px 0px;"> ' + 
+    	 			'<?php echo $p->nama ?></h4> ' + 
+    	 			'<p>Alamat : <?php echo $p->alamat ?></p>' + 
+    	 			'<?php echo $imgfoto ?>' +
+    	 			'<div>';
+
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng<?php echo $p->koordinat ?>,
 			map: maphy,
@@ -152,7 +195,19 @@
     	foreach($sma->result() as $p) {
     	?>
     	var image = '<?php echo base_url("assets/img/".$p->icon) ?>';
-    	var html = '<p style="text-align:center"><?php echo $p->nama ?><br>Alamat : <?php echo $p->alamat ?></p>';
+    	<?php
+    	$imgfoto ='';
+    	if($p->foto!='') {
+    		$imgfoto = '<img src="'.base_url("uploads/peta/".$p->foto).'" height="120">';
+    	}
+    	?>
+
+    	var html = '<div style="min-width:300px;">' +
+    	 			'<h4 style="border-bottom:1px solid #000; font-size:14px; font-weight: 400; padding: 10px 0px;"> ' + 
+    	 			'<?php echo $p->nama ?></h4> ' + 
+    	 			'<p>Alamat : <?php echo $p->alamat ?></p>' + 
+    	 			'<?php echo $imgfoto ?>' +
+    	 			'<div>';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng<?php echo $p->koordinat ?>,
 			map: maphy,
@@ -170,7 +225,19 @@
     	foreach($univ->result() as $p) {
     	?>
     	var image = '<?php echo base_url("assets/img/".$p->icon) ?>';
-    	var html = '<p style="text-align:center"><?php echo $p->nama ?><br>Alamat : <?php echo $p->alamat ?></p>';
+    	<?php
+    	$imgfoto ='';
+    	if($p->foto!='') {
+    		$imgfoto = '<img src="'.base_url("uploads/peta/".$p->foto).'" height="120">';
+    	}
+    	?>
+
+    	var html = '<div style="min-width:300px;">' +
+    	 			'<h4 style="border-bottom:1px solid #000; font-size:14px; font-weight: 400; padding: 10px 0px;"> ' + 
+    	 			'<?php echo $p->nama ?></h4> ' + 
+    	 			'<p>Alamat : <?php echo $p->alamat ?></p>' + 
+    	 			'<?php echo $imgfoto ?>' +
+    	 			'<div>';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng<?php echo $p->koordinat ?>,
 			map: maphy,
@@ -188,7 +255,19 @@
     	foreach($wisata->result() as $p) {
     	?>
     	var image = '<?php echo base_url("assets/img/".$p->icon) ?>';
-    	var html = '<p style="text-align:center"><?php echo $p->nama ?><br>Alamat : <?php echo $p->alamat ?></p>';
+    	<?php
+    	$imgfoto ='';
+    	if($p->foto!='') {
+    		$imgfoto = '<img src="'.base_url("uploads/peta/".$p->foto).'" height="120">';
+    	}
+    	?>
+
+    	var html = '<div style="min-width:300px;">' +
+    	 			'<h4 style="border-bottom:1px solid #000; font-size:14px; font-weight: 400; padding: 10px 0px;"> ' + 
+    	 			'<?php echo $p->nama ?></h4> ' + 
+    	 			'<p>Alamat : <?php echo $p->alamat ?></p>' + 
+    	 			'<?php echo $imgfoto ?>' +
+    	 			'<div>';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng<?php echo $p->koordinat ?>,
 			map: maphy,
@@ -206,7 +285,19 @@
     	foreach($pasar->result() as $p) {
     	?>
     	var image = '<?php echo base_url("assets/img/".$p->icon) ?>';
-    	var html = '<p style="text-align:center"><?php echo $p->nama ?><br>Alamat : <?php echo $p->alamat ?></p>';
+    	<?php
+    	$imgfoto ='';
+    	if($p->foto!='') {
+    		$imgfoto = '<img src="'.base_url("uploads/peta/".$p->foto).'" height="120">';
+    	}
+    	?>
+
+    	var html = '<div style="min-width:300px;">' +
+    	 			'<h4 style="border-bottom:1px solid #000; font-size:14px; font-weight: 400; padding: 10px 0px;"> ' + 
+    	 			'<?php echo $p->nama ?></h4> ' + 
+    	 			'<p>Alamat : <?php echo $p->alamat ?></p>' + 
+    	 			'<?php echo $imgfoto ?>' +
+    	 			'<div>';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng<?php echo $p->koordinat ?>,
 			map: maphy,
@@ -224,7 +315,19 @@
     	foreach($bs->result() as $p) {
     	?>
     	var image = '<?php echo base_url("assets/img/".$p->icon) ?>';
-    	var html = '<p style="text-align:center"><?php echo $p->nama ?><br>Alamat : <?php echo $p->alamat ?></p>';
+    	<?php
+    	$imgfoto ='';
+    	if($p->foto!='') {
+    		$imgfoto = '<img src="'.base_url("uploads/peta/".$p->foto).'" height="120">';
+    	}
+    	?>
+
+    	var html = '<div style="min-width:300px;">' +
+    	 			'<h4 style="border-bottom:1px solid #000; font-size:14px; font-weight: 400; padding: 10px 0px;"> ' + 
+    	 			'<?php echo $p->nama ?></h4> ' + 
+    	 			'<p>Alamat : <?php echo $p->alamat ?></p>' + 
+    	 			'<?php echo $imgfoto ?>' +
+    	 			'<div>';
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng<?php echo $p->koordinat ?>,
 			map: maphy,
@@ -250,7 +353,7 @@
 	function showFrame(bermudaTriangle, html) {
 		google.maps.event.addListener(bermudaTriangle, 'click', function(event) {
 			infowindow.setPosition(event.latLng);
-			infowindow.setContent('<iframe src="'+ html +'" width="450" height="250" frameborder="0"></iframe>');
+			infowindow.setContent('<iframe src="'+ html +'" width="490" height="250" frameborder="0"></iframe>');
 			infowindow.open(maphy, bermudaTriangle);
 			maphy.setZoom(16);
 			maphy.setCenter(event.latLng);
