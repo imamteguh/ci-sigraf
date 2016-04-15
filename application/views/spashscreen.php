@@ -35,8 +35,39 @@
 		        </div>
 
 		        <div class="col-md-5">
-		        	<div class="top-badge">
-		        	</div>
+		        	<div class="wrap-bul">
+			        	<div class="top-badge">
+			        		PERSYARATAN
+			        	</div>
+			        	<div class="bg-pm">
+	        				<div id="example_vticker">
+		        				<ul>
+		        				<?php
+						        if($news->num_rows()>0):
+						        foreach ($news->result() as $rowsn) {
+						        ?>
+		        					<li class="vtic-content">
+		        						<h2 class="pm-title"><?php echo $rowsn->judul ?></h2>
+		        						<div class="pm-body"><?php echo $rowsn->deskripsi ?></div>
+		        					</li>
+		        				<?php
+						    	}
+						        else:
+						        ?>
+		        					<li>
+		        						Maaf tidak ada pengumuman..
+		        					</li>
+		        				<?php
+						        endif;
+						        ?>
+		        				</ul>
+	        				</div>
+
+	        				<div class="tbl-masuk">
+	        				<a href="<?php echo site_url('welcome') ?>" class="btn btn-primary btn-lg">MASUK SISTEM</a>
+	        				</div>
+	        			</div>
+	        		</div>
 		        </div>
 	        </div>
         </div>
@@ -44,17 +75,24 @@
         <div class="container">
         	<div class="row">
         		<div class="col-md-7">
+
+
+        			<div class="newsticker">
+        				<span class="newstitle">NEWS</span>
+        			</div>
+
+
         			<div class="wrap-slide">
 
         			<!-- start slideshow -->
 
-        			<div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; height: 456px; overflow: hidden; visibility: hidden; background-color: rgba(100,100,100,0.1) ">
+        			<div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; height: 440px; overflow: hidden; visibility: hidden; ">
 				        <!-- Loading Screen -->
 				        <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
 				            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
 				            <div style="position:absolute;display:block;background:url('<?php echo base_url() ?>assets/plugin/jsor/img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
 				        </div>
-				        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 356px; overflow: hidden;">
+				        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 580px; height: 350px; overflow: hidden;">
 				            
 				        <?php
 				        if($slide->num_rows()>0):
@@ -77,7 +115,7 @@
 				        ?>
 				        </div>
 				        <!-- Thumbnail Navigator -->
-				        <div data-u="thumbnavigator" class="jssort01" style="position:absolute;left:0px;bottom:0px;width:800px;height:100px;" data-autocenter="1">
+				        <div data-u="thumbnavigator" class="jssort01" style="position:absolute;left:0px;bottom:0px;width:580px;height:90px;" data-autocenter="1">
 				            <!-- Thumbnail Item Skin Begin -->
 				            <div data-u="slides" style="cursor: default;">
 				                <div data-u="prototype" class="p">
@@ -94,37 +132,6 @@
         			<!-- end slideshow -->
 
 
-        			</div>
-        		</div>
-
-        		<div class="col-md-5">
-        			<div class="bg-pm">
-        				<div id="example_vticker">
-	        				<ul>
-	        				<?php
-					        if($news->num_rows()>0):
-					        foreach ($news->result() as $rowsn) {
-					        ?>
-	        					<li class="vtic-content">
-	        						<h2 class="pm-title"><?php echo $rowsn->judul ?></h2>
-	        						<div class="pm-body"><?php echo $rowsn->deskripsi ?></div>
-	        					</li>
-	        				<?php
-					    	}
-					        else:
-					        ?>
-	        					<li>
-	        						Maaf tidak ada pengumuman..
-	        					</li>
-	        				<?php
-					        endif;
-					        ?>
-	        				</ul>
-        				</div>
-
-        				<div class="tbl-masuk">
-        				<a href="<?php echo site_url('welcome') ?>" class="btn btn-primary btn-lg">MASUK SISTEM</a>
-        				</div>
         			</div>
         		</div>
         	</div>

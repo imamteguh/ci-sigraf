@@ -7,7 +7,10 @@
 		<div class="pull-left">
 			<div class="ace-setting-item">
 				<h4>Menu Filter Point</h4>
+				<input type="checkbox" name="allcheck" class="ace ace-checkbox-1" id="allcheck" checked="checked" />
+				<label class="lbl" for="allcheck"> -- Semua --</label>
 			</div>
+			<div class="hr hr10 hr-dotted"></div>
 		<?php
 		foreach ($kat->result() as $k) {
 		?>
@@ -309,5 +312,11 @@
 			icon: image
 		});
     }
+
+    $("#allcheck").change(function() {
+    	$("input[name='ceklist']").not(this).prop('checked', this.checked);
+    	clearMarkers();
+    	<?php echo getFuncPoint() ?>
+    });
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhtCv07NbDL506YaOuet1tszZbXjwuBgo&callback=initMap&libraries=geometry" async defer></script>

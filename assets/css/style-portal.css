@@ -14,7 +14,7 @@ body, html {
 	left: 0;
 	top: 0;
 	bottom: 0;
-	position: fixed;
+	position: absolute;
 	background-attachment: fixed;
 	background-size: cover;
 }
@@ -51,28 +51,36 @@ body, html {
 
 /* end */
 
-.top-badge, .bg-pm {
-	padding: 20px;
-	background-color: rgba(255, 30, 0, 0.5);
+.wrap-bul {
+	position: absolute;
+	width: 100%;
 }
 
-.top-badge {
-	/*min-height: 115px;*/
-}
-
-.bg-pm:after {
+.wrap-bul:after {
 	content: '';
 	position: absolute;
 	bottom: -70px;
-	left: -5px;
-	border-left: 250px solid transparent;
-	border-right: 250px solid transparent;
+	left: 0px;
+	border-left: 242px solid transparent;
+	border-right: 242px solid transparent;
 	border-top: 70px solid rgba(255, 30, 0, 0.5);
+	z-index: 1;
 }
 
+.top-badge{
+	padding: 20px 20px 0px;
+	/*min-height: 115px;*/
+	color: #fff;
+	text-shadow: 1px 1px 1px #000;
+	font-size: 18px;
+	text-align: right;
+	background-color: rgba(255, 30, 0, 0.5);
+}
+
+
 .bg-pm {
-	min-height: 470px;
-	margin-top: -75px;
+	padding: 0px 20px 0px;
+	background-color: rgba(255, 30, 0, 0.5);
 }
 
 .tbl-masuk {
@@ -84,7 +92,7 @@ body, html {
 }
 
 .vtic-content {
-	min-height: 400px;
+	min-height: 430px;
 }
 .pm-body {
 	font-weight: 400;
@@ -99,4 +107,13 @@ body, html {
 	text-align: center;
 	padding-bottom: 10px;
 	text-transform: uppercase;
+}
+
+.newsticker {
+	background-color: rgba(0,0,0,0.6);
+	padding:10px 20px;
+}
+.newstitle {
+	color: yellow;
+	text-shadow: 1px 1px 2px #000;
 }

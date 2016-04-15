@@ -54,4 +54,12 @@
 <script src="<?php echo base_url()?>assets/plugin/ckeditor/ckeditor.js"></script>
 
 <script language="javascript">
-CKEDITOR.replace('editor1');</script>
+CKEDITOR.replace('editor1', {
+filebrowserBrowseUrl : '<?php echo base_url()?>assets/plugin/ckfinder/ckfinder.html',
+filebrowserImageBrowseUrl : '<?php echo base_url()?>assets/plugin/ckfinder/ckfinder.html?type=Images',
+filebrowserFlashBrowseUrl : '<?php echo base_url()?>assets/plugin/ckfinder/ckfinder.html?type=Flash',
+filebrowserUploadUrl : '<?php echo base_url()?>assets/plugin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+filebrowserImageUploadUrl : '<?php echo base_url()?>assets/plugin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+filebrowserFlashUploadUrl : '<?php echo base_url()?>assets/plugin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+filebrowserWindowWidth : '700',
+filebrowserWindowHeight : '400'});</script>
