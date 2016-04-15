@@ -90,7 +90,255 @@
 	    });
 	}
 
+<<<<<<< HEAD
+	function addMarkerKantor()
+	{
+    	<?php
+    	foreach($kantor->result() as $p) {
+    	?>
+    	var image = '<?php echo base_url("assets/img/".$p->icon) ?>';
+
+    	<?php
+    	$imgfoto ='';
+    	if($p->foto!='') {
+    		$imgfoto = '<img src="'.base_url("uploads/peta/".$p->foto).'" height="120">';
+    	}
+    	?>
+
+    	var html = '<div style="min-width:300px;">' +
+    	 			'<h4 style="border-bottom:1px solid #000; font-size:14px; font-weight: 400; padding: 10px 0px;"> ' + 
+    	 			'<?php echo $p->nama ?></h4> ' + 
+    	 			'<p>Alamat : <?php echo $p->alamat ?></p>' + 
+    	 			'<?php echo $imgfoto ?>' +
+    	 			'<div>';
+
+		marker = new google.maps.Marker({
+			position: new google.maps.LatLng<?php echo $p->koordinat ?>,
+			map: maphy,
+			icon: image
+		});
+		bindInfoWindow(marker, maphy, infowindow, html);
+		amark.push(marker);
+		<?php
+		}
+		?>
+	}
+	function addMarkerSd()
+	{
+    	<?php
+    	foreach($sd->result() as $p) {
+    	?>
+    	var image = '<?php echo base_url("assets/img/".$p->icon) ?>';
+    	<?php
+    	$imgfoto ='';
+    	if($p->foto!='') {
+    		$imgfoto = '<img src="'.base_url("uploads/peta/".$p->foto).'" height="120">';
+    	}
+    	?>
+
+    	var html = '<div style="min-width:300px;">' +
+    	 			'<h4 style="border-bottom:1px solid #000; font-size:14px; font-weight: 400; padding: 10px 0px;"> ' + 
+    	 			'<?php echo $p->nama ?></h4> ' + 
+    	 			'<p>Alamat : <?php echo $p->alamat ?></p>' + 
+    	 			'<?php echo $imgfoto ?>' +
+    	 			'<div>';
+
+		marker = new google.maps.Marker({
+			position: new google.maps.LatLng<?php echo $p->koordinat ?>,
+			map: maphy,
+			icon: image
+		});
+		bindInfoWindow(marker, maphy, infowindow, html);
+		amark.push(marker);
+		<?php
+		}
+		?>
+	}
+	function addMarkerSmp()
+	{
+    	<?php
+    	foreach($smp->result() as $p) {
+    	?>
+    	var image = '<?php echo base_url("assets/img/".$p->icon) ?>';
+    	
+    	<?php
+    	$imgfoto ='';
+    	if($p->foto!='') {
+    		$imgfoto = '<img src="'.base_url("uploads/peta/".$p->foto).'" height="120">';
+    	}
+    	?>
+
+    	var html = '<div style="min-width:300px;">' +
+    	 			'<h4 style="border-bottom:1px solid #000; font-size:14px; font-weight: 400; padding: 10px 0px;"> ' + 
+    	 			'<?php echo $p->nama ?></h4> ' + 
+    	 			'<p>Alamat : <?php echo $p->alamat ?></p>' + 
+    	 			'<?php echo $imgfoto ?>' +
+    	 			'<div>';
+
+		marker = new google.maps.Marker({
+			position: new google.maps.LatLng<?php echo $p->koordinat ?>,
+			map: maphy,
+			icon: image
+		});
+		bindInfoWindow(marker, maphy, infowindow, html);
+		amark.push(marker);
+		<?php
+		}
+		?>
+	}
+	function addMarkerSma()
+	{
+    	<?php
+    	foreach($sma->result() as $p) {
+    	?>
+    	var image = '<?php echo base_url("assets/img/".$p->icon) ?>';
+    	<?php
+    	$imgfoto ='';
+    	if($p->foto!='') {
+    		$imgfoto = '<img src="'.base_url("uploads/peta/".$p->foto).'" height="120">';
+    	}
+    	?>
+
+    	var html = '<div style="min-width:300px;">' +
+    	 			'<h4 style="border-bottom:1px solid #000; font-size:14px; font-weight: 400; padding: 10px 0px;"> ' + 
+    	 			'<?php echo $p->nama ?></h4> ' + 
+    	 			'<p>Alamat : <?php echo $p->alamat ?></p>' + 
+    	 			'<?php echo $imgfoto ?>' +
+    	 			'<div>';
+		marker = new google.maps.Marker({
+			position: new google.maps.LatLng<?php echo $p->koordinat ?>,
+			map: maphy,
+			icon: image
+		});
+		bindInfoWindow(marker, maphy, infowindow, html);
+		amark.push(marker);
+		<?php
+		}
+		?>
+	}
+	function addMarkerUniv()
+	{
+    	<?php
+    	foreach($univ->result() as $p) {
+    	?>
+    	var image = '<?php echo base_url("assets/img/".$p->icon) ?>';
+    	<?php
+    	$imgfoto ='';
+    	if($p->foto!='') {
+    		$imgfoto = '<img src="'.base_url("uploads/peta/".$p->foto).'" height="120">';
+    	}
+    	?>
+
+    	var html = '<div style="min-width:300px;">' +
+    	 			'<h4 style="border-bottom:1px solid #000; font-size:14px; font-weight: 400; padding: 10px 0px;"> ' + 
+    	 			'<?php echo $p->nama ?></h4> ' + 
+    	 			'<p>Alamat : <?php echo $p->alamat ?></p>' + 
+    	 			'<?php echo $imgfoto ?>' +
+    	 			'<div>';
+		marker = new google.maps.Marker({
+			position: new google.maps.LatLng<?php echo $p->koordinat ?>,
+			map: maphy,
+			icon: image
+		});
+		bindInfoWindow(marker, maphy, infowindow, html);
+		amark.push(marker);
+		<?php
+		}
+		?>
+	}
+	function addMarkerWisata()
+	{
+    	<?php
+    	foreach($wisata->result() as $p) {
+    	?>
+    	var image = '<?php echo base_url("assets/img/".$p->icon) ?>';
+    	<?php
+    	$imgfoto ='';
+    	if($p->foto!='') {
+    		$imgfoto = '<img src="'.base_url("uploads/peta/".$p->foto).'" height="120">';
+    	}
+    	?>
+
+    	var html = '<div style="min-width:300px;">' +
+    	 			'<h4 style="border-bottom:1px solid #000; font-size:14px; font-weight: 400; padding: 10px 0px;"> ' + 
+    	 			'<?php echo $p->nama ?></h4> ' + 
+    	 			'<p>Alamat : <?php echo $p->alamat ?></p>' + 
+    	 			'<?php echo $imgfoto ?>' +
+    	 			'<div>';
+		marker = new google.maps.Marker({
+			position: new google.maps.LatLng<?php echo $p->koordinat ?>,
+			map: maphy,
+			icon: image
+		});
+		bindInfoWindow(marker, maphy, infowindow, html);
+		amark.push(marker);
+		<?php
+		}
+		?>
+	}
+	function addMarkerPasar()
+	{
+    	<?php
+    	foreach($pasar->result() as $p) {
+    	?>
+    	var image = '<?php echo base_url("assets/img/".$p->icon) ?>';
+    	<?php
+    	$imgfoto ='';
+    	if($p->foto!='') {
+    		$imgfoto = '<img src="'.base_url("uploads/peta/".$p->foto).'" height="120">';
+    	}
+    	?>
+
+    	var html = '<div style="min-width:300px;">' +
+    	 			'<h4 style="border-bottom:1px solid #000; font-size:14px; font-weight: 400; padding: 10px 0px;"> ' + 
+    	 			'<?php echo $p->nama ?></h4> ' + 
+    	 			'<p>Alamat : <?php echo $p->alamat ?></p>' + 
+    	 			'<?php echo $imgfoto ?>' +
+    	 			'<div>';
+		marker = new google.maps.Marker({
+			position: new google.maps.LatLng<?php echo $p->koordinat ?>,
+			map: maphy,
+			icon: image
+		});
+		bindInfoWindow(marker, maphy, infowindow, html);
+		amark.push(marker);
+		<?php
+		}
+		?>
+	}
+	function addMarkerBs()
+	{
+    	<?php
+    	foreach($bs->result() as $p) {
+    	?>
+    	var image = '<?php echo base_url("assets/img/".$p->icon) ?>';
+    	<?php
+    	$imgfoto ='';
+    	if($p->foto!='') {
+    		$imgfoto = '<img src="'.base_url("uploads/peta/".$p->foto).'" height="120">';
+    	}
+    	?>
+
+    	var html = '<div style="min-width:300px;">' +
+    	 			'<h4 style="border-bottom:1px solid #000; font-size:14px; font-weight: 400; padding: 10px 0px;"> ' + 
+    	 			'<?php echo $p->nama ?></h4> ' + 
+    	 			'<p>Alamat : <?php echo $p->alamat ?></p>' + 
+    	 			'<?php echo $imgfoto ?>' +
+    	 			'<div>';
+		marker = new google.maps.Marker({
+			position: new google.maps.LatLng<?php echo $p->koordinat ?>,
+			map: maphy,
+			icon: image
+		});
+		bindInfoWindow(marker, maphy, infowindow, html);
+		amark.push(marker);
+		<?php
+		}
+		?>
+	}
+=======
 	<?php echo getPoint() ?>
+>>>>>>> 56796bea9e6f0d423c69f31185f2eeed0acddea8
 
 	function hoverMaps(bermudaTriangle)
 	{

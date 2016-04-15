@@ -12,8 +12,12 @@ class api_sistem extends CI_Controller
 
 	}
 
+<<<<<<< HEAD
+	public $urlserver = 'http://192.168.152.6:8082/disduk/';
+=======
 //	public $urlserver = 'http://192.168.152.6:8082/disduk/';
 	public $urlserver = 'http://localhost:8082/disduk/';
+>>>>>>> 56796bea9e6f0d423c69f31185f2eeed0acddea8
 
 	// api background layer
 	function bg_layer()
